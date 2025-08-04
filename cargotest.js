@@ -11,6 +11,7 @@ let titAdd2 = 2;
 let titAdd3 = 3;
 let titAdd4 = 4;
 let titAdd5 = 5;
+let titAdd5 = 6;
 
 var title = document.getElementById("naam");
 
@@ -22,6 +23,7 @@ var link3 = "<a href=\"#page-3\"class=\"spanLinks\" id=\'spL2\'>(The Slideshow M
 var link4 = "<a href=\"#page-4\"class=\"spanLinks\" id=\'spL3\'>(Content Infestation)</a>";
 var link5 = "<a href=\"#page-5\"class=\"spanLinks\" id=\'spL4\'>(Still Lifes for Empty Shelves)</a>";
 var link6 = "<a href=\"#page-6\"class=\"spanLinks\" id=\'spL5\'>(Theodore Degausser — MyDementedPC)</a>";
+var link6 = "<a href=\"#page-7\"class=\"spanLinks\" id=\'spL6\'>(SECRETFACT.JPEG)</a>";
 
 // const moji = [
 //   "♥","✈", "♫","㋡","⇆","<input type=\"checkbox\"checked=\"true\">","✓","⤭","♪","⚧","☹","⟲","a","⁂","a","☆","a","®","✴",
@@ -46,6 +48,8 @@ var  titAr = [
     link5,
     "ranMoji","a","ranMoji","ranMoji","ranMoji","ranMoji",
     link6,
+    "ranMoji","Ⓐ","Ⓐ","ranMoji","ranMoji","Ⓐ","ranMoji","ranMoji",
+    link7,
   ];
 
 let titCount = 1;
@@ -112,12 +116,18 @@ let runnerFunc = (() => {
   else{
     titAdd5 = 0;
   }
+  if(titAdd6 < amountOfTits){
+    titAdd6 += titCount;
+  }
+  else{
+    titAdd6 = 0;
+  }
 
   if(titAr[titAdd5] == "ranMoji"){
     titAr[titAdd5] = moji[Math.floor(Math.random()*moji.length)];
   };
 
-  if(counter < 5){
+  if(counter < 6){
     if(titAr[titAdd1] == "A"){
       perma = perma;
     }
@@ -161,6 +171,7 @@ window.onfocus = function() {
 };
 
 const hueRanges = [
+  { min: 30, max: 75 },
   { min: 30, max: 75 },
   { min: 30, max: 75 },
   { min: 30, max: 75 },
@@ -217,6 +228,9 @@ let logColor = (() => {
         if(link.id == "spL5"){
           link.style.color = spanCol[5];
         }
+        if(link.id == "spL6"){
+          link.style.color = spanCol[6];
+        }
       }
     });
 
@@ -240,7 +254,8 @@ function handleMutations(mutationsList, observer) {
         spL2: 'https://isaacglyp.github.io/cargopublic/img/img3.png',
         spL3: 'https://isaacglyp.github.io/cargopublic/img/img4.png',
         spL4: 'https://isaacglyp.github.io/cargopublic/img/img5.png',
-        spL5: 'https://isaacglyp.github.io/cargopublic/img/img6.png'
+        spL5: 'https://isaacglyp.github.io/cargopublic/img/img6.png',
+        spL6: 'https://isaacglyp.github.io/cargopublic/img/img7.png'
     };
 
     mutationsList.forEach(function(mutation) {
@@ -281,6 +296,9 @@ function handleMutations(mutationsList, observer) {
                         if(this.id == "spL5"){
                           fadeColor(this, spanCol[5]);
                         }
+                        if(this.id == "spL6"){
+                          fadeColor(this, spanCol[6]);
+                        }
 
                         // Verwijder afbeelding als die bestaat
                         const img = this.querySelector('img');
@@ -303,6 +321,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
