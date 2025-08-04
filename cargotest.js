@@ -16,7 +16,7 @@ var title = document.getElementById("naam");
 
 var perma = "";
 
-var link1 = "<a href=\"file:///D:/School/Artez1/DAT_3/Webzzz/website_testV7/page2.html\"class=\"spanLinks\" id=\'spL0\'>(work)</a>";
+var link1 = "<a href=\"file:///D:/School/Artez1/DAT_3/Webzzz/website_testV7/page2.html\"class=\"spanLinks\" id=\'spL0\'>(work)</a> <img src=\'https://isaacglyp.github.io/cargopublic/img/img1.png\'></img>";
 var link2 = "<a href=\"https://www.youtube.com/@isaaaaaac2000\"class=\"spanLinks\" id=\'spL1\'>(video)</a>";
 var link3 = "<a href=\"https://www.instagram.com/is______c\"class=\"spanLinks\" id=\'spL2\'>(instagram)</a>";
 var link4 = "<a href=\"https://isaaaaaac.com\"class=\"spanLinks\" id=\'spL3\'>(web101)</a>";
@@ -273,29 +273,6 @@ var observer = new MutationObserver(handleMutations);
 var observerConfig = { childList: true };
 observer.observe(parentAnchor, observerConfig);
 
-let hoverImage;
-
-document.getElementById("naam").addEventListener("mousemove", function(e) {
-  if (!hoverImage) {
-    hoverImage = document.createElement("img");
-    hoverImage.src = "https://isaacglyp.github.io/cargopublic/img/img1.png"; // vervang met jouw pad
-    hoverImage.style.position = "fixed";
-    hoverImage.style.pointerEvents = "none";
-    hoverImage.style.zIndex = 1000;
-    hoverImage.style.width = "120px"; // pas aan indien nodig
-    hoverImage.style.opacity = "0.9";
-    document.body.appendChild(hoverImage);
-  }
-  hoverImage.style.left = (e.clientX + 20) + "px";
-  hoverImage.style.top = (e.clientY + 20) + "px";
-});
-
-document.getElementById("naam").addEventListener("mouseleave", function() {
-  if (hoverImage) {
-    hoverImage.remove();
-    hoverImage = null;
-  }
-});
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
