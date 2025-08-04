@@ -232,7 +232,7 @@ function fadeColor(link, originalColor) {
 
 var parentAnchor = document.getElementById('naam');
 
-const imageHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/b/b0/Free_picture_requested.png'style='height:1em; vertical-align:middle;'>";
+const imageHTML = "<img src='https://isaacglyp.github.io/cargopublic/img/img1.png'style='height:1em; vertical-align:middle;'>";
 
 let addedImages = {};
 
@@ -282,6 +282,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
