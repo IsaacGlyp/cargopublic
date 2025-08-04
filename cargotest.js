@@ -17,11 +17,11 @@ var title = document.getElementById("naam");
 var perma = "";
 
 var link1 = "<a href=\"#page-1\"class=\"spanLinks\" id=\'spL0\'>(The Promise of Something Silver)</a>"; 
-var link2 = "<a href=\"https://www.youtube.com/@isaaaaaac2000\"class=\"spanLinks\" id=\'spL1\'>(video)</a>";
-var link3 = "<a href=\"https://www.instagram.com/is______c\"class=\"spanLinks\" id=\'spL2\'>(instagram)</a>";
-var link4 = "<a href=\"https://isaaaaaac.com\"class=\"spanLinks\" id=\'spL3\'>(web101)</a>";
-var link5 = "<a href=\"https://soundcloud.com/isaaaaaaaaaaaaaaaaaaaac_2\"class=\"spanLinks\" id=\'spL4\'>(music2)</a>";
-var link6 = "<a href=\"https://soundcloud.com/isaacvandenaker\"class=\"spanLinks\" id=\'spL5\'>(music)</a>";
+var link2 = "<a href=\"#page-2\"class=\"spanLinks\" id=\'spL1\'>(PPTX)</a>";
+var link3 = "<a href=\"#page-3\"class=\"spanLinks\" id=\'spL2\'>(The Slideshow Manifold)</a>";
+var link4 = "<a href=\"#page-4\"class=\"spanLinks\" id=\'spL3\'>(Content Infestation)</a>";
+var link5 = "<a href=\"page-5\"class=\"spanLinks\" id=\'spL4\'>(Still Lifes for Empty Shelves)</a>";
+var link6 = "<a href=\"page-6\"class=\"spanLinks\" id=\'spL5\'>(Theodore Degausser — MyDementedPC)</a>";
 
 // const moji = [
 //   "♥","✈", "♫","㋡","⇆","<input type=\"checkbox\"checked=\"true\">","✓","⤭","♪","⚧","☹","⟲","a","⁂","a","☆","a","®","✴",
@@ -302,6 +302,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
