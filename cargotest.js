@@ -232,11 +232,6 @@ function fadeColor(link, originalColor) {
 
 var parentAnchor = document.getElementById('naam');
 
-const imageHTML = "<img src='https://isaacglyp.github.io/cargopublic/img/img1.png'style='height:1em; vertical-align:middle;'>";
-
-let addedImages = {};
-
-// Observer uitbreiden met logica voor afbeelding toevoegen bij hover
 function handleMutations(mutationsList, observer) {
     mutationsList.forEach(function(mutation) {
         if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
@@ -246,28 +241,27 @@ function handleMutations(mutationsList, observer) {
                     node.addEventListener('mouseover', function() {
                         nodeLink = this;
                         this.style.color = "#ff4e2f";
-
-                        // Check of dit element al een image heeft toegevoegd
-                        if (!addedImages[this.id]) {
-                            addedImages[this.id] = true;
-
-                            // Voeg afbeelding direct achter de link toe in de innerHTML van de title
-                            let currentHTML = title.innerHTML;
-                            let linkHTML = this.outerHTML;
-
-                            // Voeg de afbeelding toe na de exacte match van de gelinkte <a>
-                            let newHTML = currentHTML.replace(linkHTML, linkHTML + imageHTML);
-                            title.innerHTML = newHTML;
-                        }
                     });
 
                     node.addEventListener('mouseout', function() {
-                        if(this.id == "spL0") fadeColor(this, spanCol[0]);
-                        if(this.id == "spL1") fadeColor(this, spanCol[1]);
-                        if(this.id == "spL2") fadeColor(this, spanCol[2]);
-                        if(this.id == "spL3") fadeColor(this, spanCol[3]);
-                        if(this.id == "spL4") fadeColor(this, spanCol[4]);
-                        if(this.id == "spL5") fadeColor(this, spanCol[5]);
+                        if(this.id == "spL0"){
+                          fadeColor(this, spanCol[0]);
+                        }
+                        if(this.id == "spL1"){
+                          fadeColor(this, spanCol[1]);
+                        }
+                        if(this.id == "spL2"){
+                          fadeColor(this, spanCol[2]);
+                        }
+                        if(this.id == "spL3"){
+                          fadeColor(this, spanCol[3]);
+                        }
+                        if(this.id == "spL4"){
+                          fadeColor(this, spanCol[4]);
+                        }
+                        if(this.id == "spL5"){
+                          fadeColor(this, spanCol[5]);
+                        }
                     });
                 }
             });
@@ -279,13 +273,32 @@ var observer = new MutationObserver(handleMutations);
 var observerConfig = { childList: true };
 observer.observe(parentAnchor, observerConfig);
 
+let hoverImage;
+
+document.getElementById("naam").addEventListener("mousemove", function(e) {
+  if (!hoverImage) {
+    hoverImage = document.createElement("img");
+    hoverImage.src = "https://isaacglyp.github.io/cargopublic/img/img1.png"; // vervang met jouw pad
+    hoverImage.style.position = "fixed";
+    hoverImage.style.pointerEvents = "none";
+    hoverImage.style.zIndex = 1000;
+    hoverImage.style.width = "120px"; // pas aan indien nodig
+    hoverImage.style.opacity = "0.9";
+    document.body.appendChild(hoverImage);
+  }
+  hoverImage.style.left = (e.clientX + 20) + "px";
+  hoverImage.style.top = (e.clientY + 20) + "px";
+});
+
+document.getElementById("naam").addEventListener("mouseleave", function() {
+  if (hoverImage) {
+    hoverImage.remove();
+    hoverImage = null;
+  }
+});
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
-
-
-
-
 
 
 
