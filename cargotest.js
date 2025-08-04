@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function () {
 "use strict";
 console.log("hallo wereld")
 
@@ -323,6 +324,7 @@ logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
 
 
+}
 
 
 
