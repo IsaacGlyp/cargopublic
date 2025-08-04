@@ -233,6 +233,16 @@ function fadeColor(link, originalColor) {
 var parentAnchor = document.getElementById('naam');
 
 function handleMutations(mutationsList, observer) {
+    // Koppel IDs aan de juiste image-URL
+    const imageMap = {
+        spL0: 'https://isaacglyp.github.io/cargopublic/img/img1.png',
+        spL1: 'https://isaacglyp.github.io/cargopublic/img/img2.png',
+        spL2: 'https://isaacglyp.github.io/cargopublic/img/img3.png',
+        spL3: 'https://isaacglyp.github.io/cargopublic/img/img4.png',
+        spL4: 'https://isaacglyp.github.io/cargopublic/img/img5.png',
+        spL5: 'https://isaacglyp.github.io/cargopublic/img/img6.png'
+    };
+
     mutationsList.forEach(function(mutation) {
         if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
             mutation.addedNodes.forEach(function(node) {
@@ -245,7 +255,8 @@ function handleMutations(mutationsList, observer) {
                         // Voeg afbeelding toe als die nog niet bestaat
                         if (!this.querySelector('img')) {
                             const img = document.createElement('img');
-                            img.src = 'https://isaacglyp.github.io/cargopublic/img/img1.png';
+                            const id = this.id;
+                            img.src = imageMap[id] || 'https://isaacglyp.github.io/cargopublic/img/fallback.png'; // fallback als ID niet in map zit
                             this.appendChild(img);
                         }
                     });
@@ -283,6 +294,7 @@ function handleMutations(mutationsList, observer) {
     });
 }
 
+
 var observer = new MutationObserver(handleMutations);
 var observerConfig = { childList: true };
 observer.observe(parentAnchor, observerConfig);
@@ -290,6 +302,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
