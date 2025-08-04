@@ -23,7 +23,7 @@ var link3 = "<a href=\"#page-3\"class=\"spanLinks\" id=\'spL2\'>(The Slideshow M
 var link4 = "<a href=\"#page-4\"class=\"spanLinks\" id=\'spL3\'>(Content Infestation)</a>";
 var link5 = "<a href=\"#page-5\"class=\"spanLinks\" id=\'spL4\'>(Still Lifes for Empty Shelves)</a>";
 var link6 = "<a href=\"#page-6\"class=\"spanLinks\" id=\'spL5\'>(Theodore Degausser — MyDementedPC)</a>";
-var link6 = "<a href=\"#page-7\"class=\"spanLinks\" id=\'spL6\'>(SECRETFACT.JPEG)</a>";
+var link7 = "<a href=\"#page-7\"class=\"spanLinks\" id=\'spL6\'>(SECRETFACT.JPEG)</a>";
 
 // const moji = [
 //   "♥","✈", "♫","㋡","⇆","<input type=\"checkbox\"checked=\"true\">","✓","⤭","♪","⚧","☹","⟲","a","⁂","a","☆","a","®","✴",
@@ -321,6 +321,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
