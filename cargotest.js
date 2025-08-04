@@ -16,7 +16,7 @@ var title = document.getElementById("naam");
 
 var perma = "";
 
-var link1 = "<a href=\"file:///D:/School/Artez1/DAT_3/Webzzz/website_testV7/page2.html\"class=\"spanLinks\" id=\'spL0\'>(work)</a> <img src=\'https://isaacglyp.github.io/cargopublic/img/img1.png\'></img>";
+var link1 = "<a href=\"file:///D:/School/Artez1/DAT_3/Webzzz/website_testV7/page2.html\"class=\"spanLinks\" id=\'spL0\'>(work)</a>";
 var link2 = "<a href=\"https://www.youtube.com/@isaaaaaac2000\"class=\"spanLinks\" id=\'spL1\'>(video)</a>";
 var link3 = "<a href=\"https://www.instagram.com/is______c\"class=\"spanLinks\" id=\'spL2\'>(instagram)</a>";
 var link4 = "<a href=\"https://isaaaaaac.com\"class=\"spanLinks\" id=\'spL3\'>(web101)</a>";
@@ -241,6 +241,13 @@ function handleMutations(mutationsList, observer) {
                     node.addEventListener('mouseover', function() {
                         nodeLink = this;
                         this.style.color = "#ff4e2f";
+
+                        // Voeg afbeelding toe als die nog niet bestaat
+                        if (!this.querySelector('img')) {
+                            const img = document.createElement('img');
+                            img.src = 'https://isaacglyp.github.io/cargopublic/img/img1.png';
+                            this.appendChild(img);
+                        }
                     });
 
                     node.addEventListener('mouseout', function() {
@@ -262,7 +269,14 @@ function handleMutations(mutationsList, observer) {
                         if(this.id == "spL5"){
                           fadeColor(this, spanCol[5]);
                         }
+
+                        // Verwijder afbeelding als die bestaat
+                        const img = this.querySelector('img');
+                        if(img) {
+                            img.remove();
+                        }
                     });
+
                 }
             });
         }
@@ -276,6 +290,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
