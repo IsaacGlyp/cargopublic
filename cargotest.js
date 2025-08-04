@@ -11,7 +11,7 @@ let titAdd2 = 2;
 let titAdd3 = 3;
 let titAdd4 = 4;
 let titAdd5 = 5;
-let titAdd5 = 6;
+let titAdd6 = 6;
 
 var title = document.getElementById("naam");
 
@@ -321,6 +321,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
