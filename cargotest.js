@@ -232,52 +232,6 @@ function fadeColor(link, originalColor) {
 
 var parentAnchor = document.getElementById('naam');
 
-function handleMutations(mutationsList, observer) {
-    mutationsList.forEach(function(mutation) {
-        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-            mutation.addedNodes.forEach(function(node) {
-                if (node.nodeType === 1 && node.classList.contains('spanLinks')) {
-
-                    node.addEventListener('mouseover', function() {
-                        nodeLink = this;
-                        this.style.color = "#ff4e2f";
-                    });
-
-                    node.addEventListener('mouseout', function() {
-                        if(this.id == "spL0"){
-                          fadeColor(this, spanCol[0]);
-                        }
-                        if(this.id == "spL1"){
-                          fadeColor(this, spanCol[1]);
-                        }
-                        if(this.id == "spL2"){
-                          fadeColor(this, spanCol[2]);
-                        }
-                        if(this.id == "spL3"){
-                          fadeColor(this, spanCol[3]);
-                        }
-                        if(this.id == "spL4"){
-                          fadeColor(this, spanCol[4]);
-                        }
-                        if(this.id == "spL5"){
-                          fadeColor(this, spanCol[5]);
-                        }
-                    });
-                }
-            });
-        }
-    });
-}
-
-var observer = new MutationObserver(handleMutations);
-var observerConfig = { childList: true };
-observer.observe(parentAnchor, observerConfig);
-
-
-logColor();
-let myIntervalID = setInterval(runnerFunc, 1000);
-
-
 const imageHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/b/b0/Free_picture_requested.png'style='height:1em; vertical-align:middle;'>";
 
 let addedImages = {};
@@ -320,5 +274,17 @@ function handleMutations(mutationsList, observer) {
         }
     });
 }
+
+var observer = new MutationObserver(handleMutations);
+var observerConfig = { childList: true };
+observer.observe(parentAnchor, observerConfig);
+
+
+logColor();
+let myIntervalID = setInterval(runnerFunc, 1000);
+
+
+
+
 
 
