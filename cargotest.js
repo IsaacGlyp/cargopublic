@@ -16,7 +16,7 @@ var title = document.getElementById("naam");
 
 var perma = "";
 
-var link1 = "<a href=\"file:///D:/School/Artez1/DAT_3/Webzzz/website_testV7/page2.html\"class=\"spanLinks\" id=\'spL0\'>(work)</a>";
+var link1 = "<a href=\"file:///D:/School/Artez1/DAT_3/Webzzz/website_testV7/page2.html\"class=\"spanLinks\" id=\'spL0\'>(work)</a>"; 
 var link2 = "<a href=\"https://www.youtube.com/@isaaaaaac2000\"class=\"spanLinks\" id=\'spL1\'>(video)</a>";
 var link3 = "<a href=\"https://www.instagram.com/is______c\"class=\"spanLinks\" id=\'spL2\'>(instagram)</a>";
 var link4 = "<a href=\"https://isaaaaaac.com\"class=\"spanLinks\" id=\'spL3\'>(web101)</a>";
@@ -290,6 +290,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
