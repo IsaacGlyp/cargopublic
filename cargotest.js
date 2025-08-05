@@ -56,7 +56,7 @@ var  titAr = [
 let titCount = 1;
 let amountOfTits = titAr.length-1;
 let counter = 0;
-let maxTitleLength = 10000;
+let maxTitleLength = window.innerWidth <= 768 ? 200 : 10000;
 let intervalAnimator = 100;
 
 let runnerFunc = (() => {
@@ -322,6 +322,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
