@@ -38,10 +38,14 @@ var link7 = "<a href=\"#page-7\"class=\"spanLinks\" id=\'spL6\'>(SECRETFACT.JPEG
 //    "☺","♲", "⚠","✗","⭏","⮂","⮱","∂","𝒶","*","©","§","📡","a","✉","a","ᵃ","!",
 //  ];
 
+// const moji = [
+//    "@","s","§","A","S","$","ℐ","∂","𝒶","𝒾","©","𝒸","¢","a","ᔕ","𝓼","ⁱ","!","ᵃ",
+//  ];
+
 const moji = [
-   "@","s","§","A","S","$","ℐ","∂","𝒶","𝒾","©","𝒸","¢","a","ᔕ","𝓼","ⁱ","!","ᵃ",
+   "@","A","∂","𝒶","a","ᵃ","Ⓐ"
  ];
-  
+
 var  titAr = [
     "A","A","A","A","A","A",
     "ranMoji","ranMoji", "ranMoji",
@@ -330,6 +334,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
