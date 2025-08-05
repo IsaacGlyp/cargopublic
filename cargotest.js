@@ -171,23 +171,6 @@ window.onfocus = function() {
   console.log("active again");
 };
 
-// const observer = new IntersectionObserver((entries) => {
-//   entries.forEach(entry => {
-//     if (!entry.isIntersecting) {
-//       testje = true;
-//       console.log("title not visible");
-//     } else {
-//       testje = false;
-//       console.log("title is visible");
-//     }
-//   });
-// }, {
-//   threshold: 0.01 // triggers when even 1% of the element is in view
-// });
-
-// Start observing the title element
-// observer.observe(title);
-
 const hueRanges = [
   { min: 30, max: 75 },
   { min: 30, max: 75 },
@@ -339,6 +322,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
