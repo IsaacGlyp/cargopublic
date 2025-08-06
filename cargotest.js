@@ -43,7 +43,7 @@ var link7 = "<a href=\"#page-7\"class=\"spanLinks\" id=\'spL6\'> (SECRETFACT.JPE
 //  ];
 
 const moji = [
-   "@","A","∂","𝒶","a","ᵃ","Ⓐ"
+   "@ ","A ","∂ ","𝒶 ","a ","ᵃ ","Ⓐ "
  ];
 
 var  titAr = [
@@ -348,6 +348,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
