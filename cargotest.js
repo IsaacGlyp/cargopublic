@@ -48,7 +48,7 @@ const moji = [
 
 var  titAr = [
     "A","A","A","A","A","A",
-    "ranMoji","ranMoji","ranMoji","ranMoji ","ranMoji","ranMoji","ranMoji","ranMoji",
+    "ranMoji","ranMoji","ranMoji","ranMoji"," ","ranMoji","ranMoji","ranMoji","ranMoji",
     link1,
     "A","ranMoji","ranMoji","ranMoji","ranMoji",
     link2,
@@ -72,11 +72,11 @@ var  titAr = [
     link4,
     "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
     link5,
-    "ranMoji","a","ranMoji","ranMoji","ranMoji ","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji ","ranMoji","ranMoji","ranMoji","ranMoji",
+    "ranMoji","a","ranMoji","ranMoji","ranMoji"," ","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji"," ","ranMoji","ranMoji","ranMoji","ranMoji",
     link6,
     "ranMoji","Ⓐ","Ⓐ","ranMoji","ranMoji","Ⓐ","ranMoji","ranMoji","ranMoji",
     link7,
-   "ranMoji","a","ranMoji ","ranMoji","ranMoji","ranMoji","ranMoji ","ranMoji","A","ranMoji","ranMoji ","ranMoji","A","ranMoji",
+   "ranMoji","a","ranMoji"," ","ranMoji","ranMoji","ranMoji","ranMoji"," ","ranMoji","A","ranMoji","ranMoji"," ","ranMoji","A","ranMoji",
   ];
 
 let titCount = 1;
