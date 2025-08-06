@@ -48,7 +48,7 @@ const moji = [
 
 var  titAr = [
     "A","A","A","A","A","A",
-    "ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji",
+    "ranMoji","A","a",
     link1,
     "A","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
     link2,
@@ -348,6 +348,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
