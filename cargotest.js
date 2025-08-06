@@ -55,7 +55,6 @@ var  titAr = [
     "ranMoji","ranMoji","ranMoji","a","ranMoji","a","ranMoji","ranMoji",
     link3,
     "ranMoji","ranMoji","Ⓐ","ranMoji","Ⓐ","ranMoji","ranMoji",
-    " AKER", " DEN", " VAN", "ISAAC",
     link4,
     "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
     link5,
@@ -334,6 +333,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
