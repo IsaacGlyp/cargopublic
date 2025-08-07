@@ -43,7 +43,7 @@ var link7 = "<a href=\"#page-7\"class=\"spanLinks\" id=\'spL6\'> (SECRETFACT.JPE
 //  ];
 
 const moji = [
-   "@","A","∂","𝒶","a","ᵃ","Ⓐ"
+   "@","A","∂","𝒶","a","ᵃ","Ⓐ","@","A","∂","𝒶","a","ᵃ","Ⓐ"
  ];
 
 var  titAr = [
@@ -54,17 +54,17 @@ var  titAr = [
     link2,
     "ranMoji","ranMoji","ranMoji","a ","ranMoji","a","ranMoji","ranMoji",
     link3,
-    "ranMoji","ranMoji","Ⓐ","ranMoji","Ⓐ","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
+    "ranMoji","ranMoji","A","ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
     link4,
     "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
     link5,
     "ranMoji","a","ranMoji","ranMoji","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji",
     link6,
-    "ranMoji","Ⓐ","Ⓐ","ranMoji","ranMoji","Ⓐ","ranMoji","ranMoji","ranMoji","ranMoji",
+    "ranMoji","Ⓐ","Ⓐ","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji",
     link7,
     "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
     link1,
-    "A","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
+    "A","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji",
     link2,
     "ranMoji","ranMoji","ranMoji","a ","ranMoji","a","ranMoji","ranMoji","ranMoji","ranMoji",
     link3,
@@ -72,9 +72,9 @@ var  titAr = [
     link4,
     "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
     link5,
-    "ranMoji","a","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
+    "ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
     link6,
-    "ranMoji","Ⓐ","Ⓐ","ranMoji","ranMoji","Ⓐ","ranMoji","ranMoji","ranMoji",
+    "ranMoji","Ⓐ","Ⓐ","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji",
     link7,
    "ranMoji","a","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji","A","ranMoji",
   ];
@@ -348,6 +348,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
