@@ -27,8 +27,8 @@ var link4 = "<a href=\"#page-4\"class=\"spanLinks\" id=\'spL3\'> (Content Infest
 var link5 = "<a href=\"#page-5\"class=\"spanLinks\" id=\'spL4\'> (Still Lifes for Empty Shelves) </a>";
 var link6 = "<a href=\"#page-6\"class=\"spanLinks\" id=\'spL5\'> (MyDementedPC) </a>";
 var link7 = "<a href=\"#page-7\"class=\"spanLinks\" id=\'spL6\'> (SECRETFACT.JPEG) </a>";
-var link8 = "<a href=\"#page-8\"class=\"spanLinks\" id=\'spL7\'> (SECRETFACT.JPEG) </a>";
-var link9 = "<a href=\"#page-9\"class=\"spanLinks\" id=\'spL8\'> (SECRETFACT.JPEG) </a>";
+var link8 = "<a href=\"#page-8\"class=\"spanLinks\" id=\'spL7\'> (Measuring Leaves, Gathering Trees) </a>";
+var link9 = "<a href=\"#page-9\"class=\"spanLinks\" id=\'spL8\'> (Mirrored Vision) </a>";
 
 // const moji = [
 //   "♥","✈", "♫","㋡","⇆","<input type=\"checkbox\"checked=\"true\">","✓","⤭","♪","⚧","☹","⟲","a","⁂","a","☆","a","®","✴",
@@ -378,6 +378,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
