@@ -15,6 +15,7 @@ let titAdd5 = 5;
 let titAdd6 = 6;
 let titAdd7 = 7;
 let titAdd8 = 8;
+let titAdd9 = 9;
 
 var title = document.getElementById("naam");
 
@@ -29,6 +30,7 @@ var link6 = "<a href=\"#page-6\"class=\"spanLinks\" id=\'spL5\'> (MyDementedPC) 
 var link7 = "<a href=\"#page-7\"class=\"spanLinks\" id=\'spL6\'> (SECRETFACT.JPEG) </a>";
 var link8 = "<a href=\"#page-8\"class=\"spanLinks\" id=\'spL7\'> (Measuring Leaves, Gathering Trees) </a>";
 var link9 = "<a href=\"#page-9\"class=\"spanLinks\" id=\'spL8\'> (Mirrored Vision) </a>";
+var link10 = "<a href=\"#page-10\"class=\"spanLinks\" id=\'spL9\'> (A Species of Nodes) </a>";
 
 // const moji = [
 //   "♥","✈", "♫","㋡","⇆","<input type=\"checkbox\"checked=\"true\">","✓","⤭","♪","⚧","☹","⟲","a","⁂","a","☆","a","®","✴",
@@ -71,6 +73,8 @@ var  titAr = [
     "ranMoji","Ⓐ","Ⓐ","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji",
     link9,
     "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
+    link10,
+    "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji", 
     link1,
     "A","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji",
     link2,
@@ -85,6 +89,12 @@ var  titAr = [
     "ranMoji","Ⓐ","Ⓐ","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji",
     link7,
    "ranMoji","a","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji","A","ranMoji",
+    link8,
+    "ranMoji","Ⓐ","Ⓐ","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji",
+    link9,
+    "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
+    link10,
+    "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji",
   ];
 
 let titCount = 1;
@@ -169,12 +179,18 @@ let runnerFunc = (() => {
   else{
     titAdd8 = 0;
   }
+  if(titAdd9 < amountOfTits){
+    titAdd9 += titCount;
+  }
+  else{
+    titAdd9 = 0;
+  }
 
   if(titAr[titAdd5] == "ranMoji"){
     titAr[titAdd5] = moji[Math.floor(Math.random()*moji.length)];
   };
 
-  if(counter < 8){
+  if(counter < 9){
     if(titAr[titAdd1] == "A"){
       perma = perma;
     }
@@ -218,6 +234,7 @@ window.onfocus = function() {
 };
 
 const hueRanges = [
+  { min: 30, max: 75 },
   { min: 30, max: 75 },
   { min: 30, max: 75 },
   { min: 30, max: 75 },
@@ -286,6 +303,9 @@ let logColor = (() => {
         if(link.id == "spL8"){
           link.style.color = spanCol[8];
         }
+        if(link.id == "spL9"){
+          link.style.color = spanCol[9];
+        }
       }
     });
 
@@ -312,7 +332,8 @@ function handleMutations(mutationsList, observer) {
         spL5: 'https://isaacglyp.github.io/cargopublic/img/img6.png',
         spL6: 'https://isaacglyp.github.io/cargopublic/img/img7.png',
         spL7: 'https://isaacglyp.github.io/cargopublic/img/img8.png',
-        spL8: 'https://isaacglyp.github.io/cargopublic/img/img9.png'
+        spL8: 'https://isaacglyp.github.io/cargopublic/img/img9.png',
+        spL9: 'https://isaacglyp.github.io/cargopublic/img/img10.png'
     };
 
     mutationsList.forEach(function(mutation) {
@@ -362,6 +383,9 @@ function handleMutations(mutationsList, observer) {
                         if(this.id == "spL8"){
                           fadeColor(this, spanCol[8]);
                         }
+                       if(this.id == "spL9"){
+                          fadeColor(this, spanCol[9]);
+                        }
 
                         // Verwijder afbeelding als die bestaat
                         const img = this.querySelector('img');
@@ -384,6 +408,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
