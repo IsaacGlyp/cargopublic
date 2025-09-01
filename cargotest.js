@@ -168,7 +168,7 @@ let runnerFunc = (() => {
     titAr[titAdd5] = moji[Math.floor(Math.random()*moji.length)];
   };
 
-  if(counter < 6){
+  if(counter < 8){
     if(titAr[titAdd1] == "A"){
       perma = perma;
     }
@@ -378,6 +378,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
