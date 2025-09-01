@@ -154,8 +154,14 @@ let runnerFunc = (() => {
   if(titAdd6 < amountOfTits){
     titAdd6 += titCount;
   }
+  else{
+    titAdd6 = 0;
+  }
   if(titAdd7 < amountOfTits){
     titAdd7 += titCount;
+  }
+  else{
+    titAdd7 = 0;
   }
   if(titAdd8 < amountOfTits){
     titAdd8 += titCount;
@@ -378,6 +384,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
