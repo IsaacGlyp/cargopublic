@@ -1,61 +1,25 @@
 
-onsole.log("hallo wereld");
+"use strict";
+console.log("hallo wereld")
 
-// -------------------
-// MOBILE DETECTION
-// -------------------
-function isMobile() {
-  return window.innerWidth <= 768 || /Mobi|Android/i.test(navigator.userAgent);
-}
+var testje = false;
 
-// -------------------
-// RANMOJI NAME FUNCTION
-// -------------------
-const moji = ["@", "A", "∂", "𝒶", "a", "ᵃ", "Ⓐ"];
+var timer = 1000;
 
-function initRanMojiName(elementId, name) {
-  const el = document.getElementById(elementId);
-  if (!el) return;
+let titAdd  = 0;
+let titAdd1 = 1;
+let titAdd2 = 2;
+let titAdd3 = 3;
+let titAdd4 = 4;
+let titAdd5 = 5;
+let titAdd6 = 6;
+let titAdd7 = 7;
+let titAdd8 = 8;
+let titAdd9 = 9;
 
-  function replaceAWithMoji(text) {
-    return text.replace(/a/gi, () => moji[Math.floor(Math.random() * moji.length)]);
-  }
+var title = document.getElementById("naam");
 
-  function updateName() {
-    el.innerHTML = replaceAWithMoji(name);
-  }
-
-  // Update every 500ms
-  setInterval(updateName, 500);
-}
-
-// -------------------
-// INIT
-// -------------------
-if (isMobile()) {
-  // On mobile, only show name with ranMoji animation
-  initRanMojiName("naam2", "ISAAC VAN DEN AKER");
-} else {
-  // -------------------
-  // DESKTOP: your existing code
-  // -------------------
-  var testje = false;
-  var timer = 1000;
-
-  let titAdd  = 0;
-  let titAdd1 = 1;
-  let titAdd2 = 2;
-  let titAdd3 = 3;
-  let titAdd4 = 4;
-  let titAdd5 = 5;
-  let titAdd6 = 6;
-  let titAdd7 = 7;
-  let titAdd8 = 8;
-  let titAdd9 = 9;
-
-  var title = document.getElementById("naam");
-  var perma = "";
-
+var perma = "";
 
 var link1 = "<a href=\"#page-1\"class=\"spanLinks\" id=\'spL0\'> (The Promise of Something Silver) </a>"; 
 var link2 = "<a href=\"#page-2\"class=\"spanLinks\" id=\'spL1\'> (PPTX) </a>";
