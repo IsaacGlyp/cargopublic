@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>isaaaaaac</title>
-  <link rel="stylesheet" href="reset.CSS">
-  <link rel="stylesheet" href="main.CSS">
-</head>
-<body>
-<div class="container-bg"></div>
-<div class="container">
-  <a href="https://isaaaaaac.com/" onmouseover="true" class="naam" id="naam">
-    ISAAC VAN DEN AKER<span class="spanLinks" id="spanLinks"></span>
-  </a>
-</div>
 
-<script>
 "use strict";
 console.log("hallo wereld");
 
@@ -62,12 +45,26 @@ let intervalAnimator = 50;
 // -------------------
 let runnerFunc = (() => {
   counter +=1;
-  if (testje) { clearInterval(myIntervalID); myIntervalID = setInterval(runnerFunc, 1500); }
-  else if(perma.length > 1000){
-    if(intervalAnimator < 200){ clearInterval(myIntervalID); myIntervalID = setInterval(runnerFunc, intervalAnimator); intervalAnimator+=1; }
-    else if(intervalAnimator < 500){ clearInterval(myIntervalID); myIntervalID = setInterval(runnerFunc, intervalAnimator); intervalAnimator+=25; }
-    else { clearInterval(myIntervalID); myIntervalID = setInterval(runnerFunc, 500); }
-  } else { clearInterval(myIntervalID); myIntervalID = setInterval(runnerFunc, 100); }
+  if (testje) {
+    clearInterval(myIntervalID);
+    myIntervalID = setInterval(runnerFunc, 1500);
+  } else if(perma.length > 1000){
+    if(intervalAnimator < 200){
+      clearInterval(myIntervalID);
+      myIntervalID = setInterval(runnerFunc, intervalAnimator);
+      intervalAnimator=intervalAnimator+1;
+    } else if(intervalAnimator > 199 && intervalAnimator < 500){
+      clearInterval(myIntervalID);
+      myIntervalID = setInterval(runnerFunc, intervalAnimator);
+      intervalAnimator=intervalAnimator+25;
+    } else {
+      clearInterval(myIntervalID);
+      myIntervalID = setInterval(runnerFunc, 500);
+    }
+  } else {
+    clearInterval(myIntervalID);
+    myIntervalID = setInterval(runnerFunc, 100);
+  }
 
   amountOfTits = titAr.length-1;
   if(titAdd1 < amountOfTits){ titAdd1 += titCount; } else { titAdd1 = 0; }
@@ -80,43 +77,66 @@ let runnerFunc = (() => {
   if(titAdd8 < amountOfTits){ titAdd8 += titCount; } else { titAdd8 = 0; }
   if(titAdd9 < amountOfTits){ titAdd9 += titCount; } else { titAdd9 = 0; }
 
-  if(titAr[titAdd5] == "ranMoji"){ titAr[titAdd5] = moji[Math.floor(Math.random()*moji.length)]; }
+  if(titAr[titAdd5] == "ranMoji"){
+    titAr[titAdd5] = moji[Math.floor(Math.random()*moji.length)];
+  };
 
-  if(counter >= 6 && titAr[titAdd1] == "A"){ titAr[titAdd1] = moji[Math.floor(Math.random()*moji.length)]; perma = titAr[titAdd1] + perma; }
+  if(counter < 6){
+    if(titAr[titAdd1] == "A"){ perma = perma; }
+  }
+  else {
+    if(titAr[titAdd1] == "A"){
+      titAr[titAdd1] = moji[Math.floor(Math.random()*moji.length)];
+    }
+    perma =  titAr[titAdd1] + perma;
+  };
 
   title.innerHTML = "IS"+ titAr[titAdd5] + titAr[titAdd4] + "C" + " V" + titAr[titAdd3] + "N" + " DEN " + titAr[titAdd2] + "KER" + " " + perma;
-  if(perma.length > maxTitleLength){ perma = perma.slice(0, - (perma.length - maxTitleLength)); }
+
+  if (perma.length > maxTitleLength) {
+    const charsToRemove = perma.length - maxTitleLength;
+    perma = perma.slice(0, -charsToRemove);
+  }
 });
 
-title.onmouseover = function(){ testje = true; };
-title.onmouseout = function(){ testje = false; };
-window.onblur = function(){ testje = true; };
-window.onfocus = function(){ testje = false; };
+title.onmouseover = function() { testje = true; };
+title.onmouseout = function() { testje = false; };
+window.onblur = function() { testje = true; };
+window.onfocus = function() { testje = false; };
 
 // -------------------
 // COLOR ANIMATION
 // -------------------
 const hueRanges = Array(10).fill({ min: 30, max: 75 });
 let hues = [], directions = [], spanCol = [];
+
 function getRandomDirection() { return Math.random() * (1 - 0.5) + 0.2; }
-for(let i=0;i<hueRanges.length;i++){ hues[i] = hueRanges[i].min; spanCol[i] = `hsl(270, 80%, ${hues[i]}%)`; directions[i] = getRandomDirection(); }
+for (let i = 0; i < hueRanges.length; i++) {
+  hues[i] = hueRanges[i].min;
+  spanCol[i] = `hsl(270, 80%, ${hues[i]}%)`;
+  directions[i] = getRandomDirection();
+}
 
 let nodeLink;
 let logColor = (() => {
-  for(let i=0;i<hues.length;i++){ hues[i]+=directions[i]; if(hues[i]<hueRanges[i].min||hues[i]>hueRanges[i].max){ directions[i]*=-1; } spanCol[i]=`hsl(270, 80%, ${hues[i]}%)`; }
+  for (let i = 0; i < hues.length; i++) {
+    hues[i] += directions[i];
+    if (hues[i] < hueRanges[i].min || hues[i] > hueRanges[i].max) { directions[i] *= -1; }
+    spanCol[i] = `hsl(270, 80%, ${hues[i]}%)`;
+  }
   let links = document.querySelectorAll('.spanLinks');
-  links.forEach(link=>{
-    if(link!==nodeLink){
-      if(link.id=="spL0") link.style.color=spanCol[0];
-      if(link.id=="spL1") link.style.color=spanCol[1];
-      if(link.id=="spL2") link.style.color=spanCol[2];
-      if(link.id=="spL3") link.style.color=spanCol[3];
-      if(link.id=="spL4") link.style.color=spanCol[4];
-      if(link.id=="spL5") link.style.color=spanCol[5];
-      if(link.id=="spL6") link.style.color=spanCol[6];
-      if(link.id=="spL7") link.style.color=spanCol[7];
-      if(link.id=="spL8") link.style.color=spanCol[8];
-      if(link.id=="spL9") link.style.color=spanCol[9];
+  links.forEach(link => {
+    if (link !== nodeLink) {
+      if(link.id == "spL0"){ link.style.color = spanCol[0]; }
+      if(link.id == "spL1"){ link.style.color = spanCol[1]; }
+      if(link.id == "spL2"){ link.style.color = spanCol[2]; }
+      if(link.id == "spL3"){ link.style.color = spanCol[3]; }
+      if(link.id == "spL4"){ link.style.color = spanCol[4]; }
+      if(link.id == "spL5"){ link.style.color = spanCol[5]; }
+      if(link.id == "spL6"){ link.style.color = spanCol[6]; }
+      if(link.id == "spL7"){ link.style.color = spanCol[7]; }
+      if(link.id == "spL8"){ link.style.color = spanCol[8]; }
+      if(link.id == "spL9"){ link.style.color = spanCol[9]; }
     }
   });
   requestAnimationFrame(logColor);
@@ -206,6 +226,4 @@ if(isMobile()){
   // Desktop: dynamic title animation
   var myIntervalID = setInterval(runnerFunc, 1000);
 }
-</script>
-</body>
-</html>
+
