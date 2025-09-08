@@ -1,5 +1,33 @@
-
+  
 "use strict";
+
+// -------------------
+// MOBILE CHECK
+// -------------------
+(function() {
+  const isMobile = window.innerWidth <= 768 || /Mobi|Android/i.test(navigator.userAgent);
+  if (isMobile) {
+    // Hide desktop name and menu
+    const desktopName = document.getElementById("naam");
+    if (desktopName) desktopName.style.display = "none";
+
+    // Show mobile name
+    const mobileName = document.getElementById("naam2");
+    if (mobileName) mobileName.style.display = "inline";
+
+    const moji = ["@", "A", "∂", "𝒶", "a", "ᵃ", "Ⓐ"];
+    const name = "ISAAC VAN DEN AKER";
+
+    setInterval(() => {
+      mobileName.innerHTML = name.replace(/a/gi, () => moji[Math.floor(Math.random() * moji.length)]);
+    }, 200);
+
+    // Stop further execution of the desktop code
+    return; // nothing else runs
+  }
+})();
+
+
 console.log("hallo wereld")
 
 var testje = false;
@@ -408,51 +436,4 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
