@@ -220,7 +220,7 @@ let runnerFunc = (() => {
     titAr[titAdd5] = moji[Math.floor(Math.random()*moji.length)];
   };
 
-  if(counter < 9){
+  if(counter < 5){
     if(titAr[titAdd1] == "A"){
       perma = perma;
     }
@@ -345,7 +345,7 @@ let logColor = (() => {
 logColor();
 
 function fadeColor(link, originalColor) {
-  link.style.transition = "color 0.2s"; // Smooth transition over 0.5 seconds
+  link.style.transition = "color 0.5s"; // Smooth transition over 0.5 seconds
   link.style.color = originalColor;
 }
 
@@ -438,5 +438,6 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
