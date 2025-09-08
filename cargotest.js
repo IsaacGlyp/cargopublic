@@ -1,65 +1,25 @@
+
 "use strict";
-console.log("hallo wereld");
+console.log("hallo wereld")
 
-// -------------------
-// MOBILE DETECTION
-// -------------------
-function isMobile() {
-  return window.innerWidth <= 768 || /Mobi|Android/i.test(navigator.userAgent);
-}
+var testje = false;
 
-// -------------------
-// RANMOJI NAME FUNCTION
-// -------------------
-const moji = ["@", "A", "∂", "𝒶", "a", "ᵃ", "Ⓐ"];
+var timer = 1000;
 
-function initRanMojiName(elementId, name) {
-  const el = document.getElementById(elementId);
-  if (!el) return;
+let titAdd  = 0;
+let titAdd1 = 1;
+let titAdd2 = 2;
+let titAdd3 = 3;
+let titAdd4 = 4;
+let titAdd5 = 5;
+let titAdd6 = 6;
+let titAdd7 = 7;
+let titAdd8 = 8;
+let titAdd9 = 9;
 
-  function replaceAWithMoji(text) {
-    return text.replace(/a/gi, () => moji[Math.floor(Math.random() * moji.length)]);
-  }
+var title = document.getElementById("naam");
 
-  function updateName() {
-    el.innerHTML = replaceAWithMoji(name);
-  }
-
-  // Update every 200ms
-  setInterval(updateName, 200);
-}
-
-// -------------------
-// INIT
-// -------------------
-if (isMobile()) {
-
-  document.getElementById("naam").style.display = "none";  
-  document.getElementById("naam2").style.display = "block";
-
-  initRanMojiName("naam2", "ISAAC VAN DEN AKER");
-
-} else {
-
-  document.getElementById("naam2").style.display = "none"; 
-  document.getElementById("naam").style.display = "block"; 
-
-  var testje = false;
-  var timer = 1000;
-
-  let titAdd  = 0;
-  let titAdd1 = 1;
-  let titAdd2 = 2;
-  let titAdd3 = 3;
-  let titAdd4 = 4;
-  let titAdd5 = 5;
-  let titAdd6 = 6;
-  let titAdd7 = 7;
-  let titAdd8 = 8;
-  let titAdd9 = 9;
-
-  var title = document.getElementById("naam");
-  var perma = "";
+var perma = "";
 
 var link1 = "<a href=\"#page-1\"class=\"spanLinks\" id=\'spL0\'> (The Promise of Something Silver) </a>"; 
 var link2 = "<a href=\"#page-2\"class=\"spanLinks\" id=\'spL1\'> (PPTX) </a>";
@@ -71,6 +31,22 @@ var link7 = "<a href=\"#page-7\"class=\"spanLinks\" id=\'spL6\'> (SECRETFACT.JPE
 var link8 = "<a href=\"#page-8\"class=\"spanLinks\" id=\'spL7\'> (Measuring Leaves, Gathering Trees) </a>";
 var link9 = "<a href=\"#page-9\"class=\"spanLinks\" id=\'spL8\'> (Mirrored Vision) </a>";
 var link10 = "<a href=\"#page-10\"class=\"spanLinks\" id=\'spL9\'> (A Species of Nodes) </a>";
+
+// const moji = [
+//   "♥","✈", "♫","㋡","⇆","<input type=\"checkbox\"checked=\"true\">","✓","⤭","♪","⚧","☹","⟲","a","⁂","a","☆","a","®","✴",
+// ];
+
+// const moji = [
+//   "💚","🧩", "🦎","🤮","🧽","🤮","😵","⚠️","✨","🧚‍♂️","💫","💿","📡","a","🧼","a","🔮"," ",
+// ];
+
+// const moji = [
+//    "☺","♲", "⚠","✗","⭏","⮂","⮱","∂","𝒶","*","©","§","📡","a","✉","a","ᵃ","!",
+//  ];
+
+// const moji = [
+//    "@","s","§","A","S","$","ℐ","∂","𝒶","𝒾","©","𝒸","¢","a","ᔕ","𝓼","ⁱ","!","ᵃ",
+//  ];
 
 const moji = [
    "@","A","∂","𝒶","a","ᵃ","Ⓐ","@","A","∂","𝒶","a","ᵃ","Ⓐ"
@@ -214,7 +190,7 @@ let runnerFunc = (() => {
     titAr[titAdd5] = moji[Math.floor(Math.random()*moji.length)];
   };
 
-  if(counter < 5){
+  if(counter < 9){
     if(titAr[titAdd1] == "A"){
       perma = perma;
     }
@@ -339,7 +315,7 @@ let logColor = (() => {
 logColor();
 
 function fadeColor(link, originalColor) {
-  link.style.transition = "color 0.3s"; // Smooth transition over 0.5 seconds
+  link.style.transition = "color 0.2s"; // Smooth transition over 0.5 seconds
   link.style.color = originalColor;
 }
 
@@ -433,4 +409,50 @@ observer.observe(parentAnchor, observerConfig);
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
