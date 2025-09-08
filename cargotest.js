@@ -1,412 +1,458 @@
+
 "use strict";
-console.log("hallo wereld");
+console.log("hallo wereld")
 
-// -------------------
-// MOBILE DETECTION
-// -------------------
-function isMobile() {
-  return window.innerWidth <= 768 || /Mobi|Android/i.test(navigator.userAgent);
-}
+var testje = false;
 
-// -------------------
-// RANMOJI NAME FUNCTION
-// -------------------
-const moji = ["@", "A", "∂", "𝒶", "a", "ᵃ", "Ⓐ"];
+var timer = 1000;
 
-function initRanMojiName(elementId, name) {
-  const el = document.getElementById(elementId);
-  if (!el) return;
+let titAdd  = 0;
+let titAdd1 = 1;
+let titAdd2 = 2;
+let titAdd3 = 3;
+let titAdd4 = 4;
+let titAdd5 = 5;
+let titAdd6 = 6;
+let titAdd7 = 7;
+let titAdd8 = 8;
+let titAdd9 = 9;
 
-  function replaceAWithMoji(text) {
-    return text.replace(/a/gi, () => moji[Math.floor(Math.random() * moji.length)]);
-  }
+var title = document.getElementById("naam");
 
-  function updateName() {
-    el.innerHTML = replaceAWithMoji(name);
-  }
+var perma = "";
 
-  // Update every 200ms
-  setInterval(updateName, 200);
-}
+var link1 = "<a href=\"#page-1\"class=\"spanLinks\" id=\'spL0\'> (The Promise of Something Silver) </a>"; 
+var link2 = "<a href=\"#page-2\"class=\"spanLinks\" id=\'spL1\'> (PPTX) </a>";
+var link3 = "<a href=\"#page-3\"class=\"spanLinks\" id=\'spL2\'> (The Slideshow Manifold) </a>";
+var link4 = "<a href=\"#page-4\"class=\"spanLinks\" id=\'spL3\'> (Content Infestation) </a>";
+var link5 = "<a href=\"#page-5\"class=\"spanLinks\" id=\'spL4\'> (Still Lifes for Empty Shelves) </a>";
+var link6 = "<a href=\"#page-6\"class=\"spanLinks\" id=\'spL5\'> (MyDementedPC) </a>";
+var link7 = "<a href=\"#page-7\"class=\"spanLinks\" id=\'spL6\'> (SECRETFACT.JPEG) </a>";
+var link8 = "<a href=\"#page-8\"class=\"spanLinks\" id=\'spL7\'> (Measuring Leaves, Gathering Trees) </a>";
+var link9 = "<a href=\"#page-9\"class=\"spanLinks\" id=\'spL8\'> (Mirrored Vision) </a>";
+var link10 = "<a href=\"#page-10\"class=\"spanLinks\" id=\'spL9\'> (A Species of Nodes) </a>";
 
-// -------------------
-// INIT
-// -------------------
-if (isMobile()) {
-  // MOBILE: show only ranMoji name
-  document.getElementById("naam").style.display = "none";   // hide desktop menu
-  document.getElementById("naam2").style.display = "inline"; // show animated name
-  initRanMojiName("naam2", "ISAAC VAN DEN AKER");
+// const moji = [
+//   "♥","✈", "♫","㋡","⇆","<input type=\"checkbox\"checked=\"true\">","✓","⤭","♪","⚧","☹","⟲","a","⁂","a","☆","a","®","✴",
+// ];
 
-} else {
-  // DESKTOP: show only desktop menu
-  document.getElementById("naam2").style.display = "none";  // hide ranMoji name
-  document.getElementById("naam").style.display = "inline";  // show desktop menu
+// const moji = [
+//   "💚","🧩", "🦎","🤮","🧽","🤮","😵","⚠️","✨","🧚‍♂️","💫","💿","📡","a","🧼","a","🔮"," ",
+// ];
 
-  // -------------------
-  // BEGIN YOUR FULL DESKTOP LOGIC
-  // -------------------
-  var testje = false;
-  var timer = 1000;
+// const moji = [
+//    "☺","♲", "⚠","✗","⭏","⮂","⮱","∂","𝒶","*","©","§","📡","a","✉","a","ᵃ","!",
+//  ];
 
-  let titAdd  = 0;
-  let titAdd1 = 1;
-  let titAdd2 = 2;
-  let titAdd3 = 3;
-  let titAdd4 = 4;
-  let titAdd5 = 5;
-  let titAdd6 = 6;
-  let titAdd7 = 7;
-  let titAdd8 = 8;
-  let titAdd9 = 9;
+// const moji = [
+//    "@","s","§","A","S","$","ℐ","∂","𝒶","𝒾","©","𝒸","¢","a","ᔕ","𝓼","ⁱ","!","ᵃ",
+//  ];
 
-  var title = document.getElementById("naam");
-  var perma = "";
+const moji = [
+   "@","A","∂","𝒶","a","ᵃ","Ⓐ","@","A","∂","𝒶","a","ᵃ","Ⓐ"
+ ];
 
-  // --- all your link definitions here ---
-  var link1 = "<a href=\"#page-1\" class=\"spanLinks\" id='spL0'> (The Promise of Something Silver) </a>";
-  var link2 = "<a href=\"#page-2\" class=\"spanLinks\" id='spL1'> (PPTX) </a>";
-  var link3 = "<a href=\"#page-3\" class=\"spanLinks\" id='spL2'> (The Slideshow Manifold) </a>";
-  var link4 = "<a href=\"#page-4\" class=\"spanLinks\" id='spL3'> (Content Infestation) </a>";
-  var link5 = "<a href=\"#page-5\" class=\"spanLinks\" id='spL4'> (Still Lifes for Empty Shelves) </a>";
-  var link6 = "<a href=\"#page-6\" class=\"spanLinks\" id='spL5'> (MyDementedPC) </a>";
-  var link7 = "<a href=\"#page-7\" class=\"spanLinks\" id='spL6'> (SECRETFACT.JPEG) </a>";
-  var link8 = "<a href=\"#page-8\" class=\"spanLinks\" id='spL7'> (Measuring Leaves, Gathering Trees) </a>";
-  var link9 = "<a href=\"#page-9\" class=\"spanLinks\" id='spL8'> (Mirrored Vision) </a>";
-  var link10 = "<a href=\"#page-10\" class=\"spanLinks\" id='spL9'> (A Species of Nodes) </a>";
-
-
-  // keep same moji (already declared above), but redeclare locally for code parity (allowed)
-  // const moji = [...]; // not necessary - using the top-level moji
-
-  var  titAr = [
-      "A","A","A","A","A","A",
-      "ᵃ","a","Ⓐ",
-      link1,
-      "A","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
-      link2,
-      "ranMoji","ranMoji","ranMoji","a ","ranMoji","a","ranMoji","ranMoji",
-      link3,
-      "ranMoji","ranMoji","A","ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
-      link4,
-      "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
-      link5,
-      "ranMoji","a","ranMoji","ranMoji","ranMoji","ranMoji","A","A","A","ranMoji","ranMoji","ranMoji","ranMoji",
-      link6,
-      "ranMoji","Ⓐ","Ⓐ","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji",
-      link7,
-      "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
-      link8,
-      "ranMoji","Ⓐ","Ⓐ","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji",
-      link9,
-      "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
-      link10,
-      "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji", 
-      link1,
-      "A","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji",
-      link2,
-      "ranMoji","ranMoji","ranMoji","a ","ranMoji","a","ranMoji","ranMoji","ranMoji","ranMoji",
-      link3,
-      "ranMoji","ranMoji","Ⓐ","ranMoji","ranMoji","ranMoji","Ⓐ ","ranMoji","A","A","A","A","ranMoji",
-      link4,
-      "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
-      link5,
-      "ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
-      link6,
-      "ranMoji","Ⓐ","Ⓐ","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji",
-      link7,
-     "ranMoji","a","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji","A","ranMoji",
-      link8,
-      "ranMoji","Ⓐ","Ⓐ","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji",
-      link9,
-      "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
-      link10,
-      "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji",
+var  titAr = [
+    "A","A","A","A","A","A",
+    "ᵃ","a","Ⓐ",
+    link1,
+    "A","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
+    link2,
+    "ranMoji","ranMoji","ranMoji","a ","ranMoji","a","ranMoji","ranMoji",
+    link3,
+    "ranMoji","ranMoji","A","ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
+    link4,
+    "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
+    link5,
+    "ranMoji","a","ranMoji","ranMoji","ranMoji","ranMoji","A","A","A","ranMoji","ranMoji","ranMoji","ranMoji",
+    link6,
+    "ranMoji","Ⓐ","Ⓐ","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji",
+    link7,
+    "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
+    link8,
+    "ranMoji","Ⓐ","Ⓐ","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji",
+    link9,
+    "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
+    link10,
+    "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji", 
+    link1,
+    "A","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji",
+    link2,
+    "ranMoji","ranMoji","ranMoji","a ","ranMoji","a","ranMoji","ranMoji","ranMoji","ranMoji",
+    link3,
+    "ranMoji","ranMoji","Ⓐ","ranMoji","ranMoji","ranMoji","Ⓐ ","ranMoji","A","A","A","A","ranMoji",
+    link4,
+    "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
+    link5,
+    "ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
+    link6,
+    "ranMoji","Ⓐ","Ⓐ","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji",
+    link7,
+   "ranMoji","a","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji","A","ranMoji",
+    link8,
+    "ranMoji","Ⓐ","Ⓐ","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji",
+    link9,
+    "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
+    link10,
+    "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji",
   ];
 
-  let titCount = 1;
-  let amountOfTits = titAr.length-1;
-  let counter = 0;
-  let maxTitleLength = window.innerWidth <= 768 ? 1000 : 10000;
-  let intervalAnimator = 50;
+let titCount = 1;
+let amountOfTits = titAr.length-1;
+let counter = 0;
+let maxTitleLength = window.innerWidth <= 768 ? 1000 : 10000;
+let intervalAnimator = 50;
 
-  // declare myIntervalID here so runnerFunc can reference it safely
-  var myIntervalID = null;
+let runnerFunc = (() => {
 
-  let runnerFunc = (() => {
-      counter +=1;
-      // console.log(intervalAnimator);
-      if (testje) {
+    counter +=1;
+    console.log(intervalAnimator);
+    if (testje) {
+      clearInterval(myIntervalID);
+      myIntervalID = setInterval(runnerFunc, 1500);
+    } else if(perma.length > 1000){
+      if(intervalAnimator < 200){
         clearInterval(myIntervalID);
-        myIntervalID = setInterval(runnerFunc, 1500);
-      } else if(perma.length > 1000){
-        if(intervalAnimator < 200){
-          clearInterval(myIntervalID);
-          myIntervalID = setInterval(runnerFunc, intervalAnimator);
-          intervalAnimator=intervalAnimator+1;
-        }else if(intervalAnimator > 199 && intervalAnimator < 500){
-          clearInterval(myIntervalID);
-          myIntervalID = setInterval(runnerFunc, intervalAnimator);
-          intervalAnimator=intervalAnimator+25;
-        }else{
-          clearInterval(myIntervalID);
-          myIntervalID = setInterval(runnerFunc, 500);
+        myIntervalID = setInterval(runnerFunc, intervalAnimator);
+        intervalAnimator=intervalAnimator+1;
+      }else if(intervalAnimator > 199 && intervalAnimator < 500){
+        clearInterval(myIntervalID);
+        myIntervalID = setInterval(runnerFunc, intervalAnimator);
+        intervalAnimator=intervalAnimator+25;
+      }else{
+        clearInterval(myIntervalID);
+        myIntervalID = setInterval(runnerFunc, 500);
+      }
+    }
+    else {
+      clearInterval(myIntervalID);
+      myIntervalID = setInterval(runnerFunc, 100);
+    }
+
+    amountOfTits = titAr.length-1;
+
+  if(titAdd1 < amountOfTits){
+    titAdd1 += titCount;
+  }  else{
+    titAdd1 = 0;
+  }
+
+  if(titAdd2 < amountOfTits){
+    titAdd2 += titCount;
+  }
+  else{
+    titAdd2 = 0;
+  }
+  if(titAdd3 < amountOfTits){
+    titAdd3 += titCount;
+  }
+  else{
+    titAdd3 = 0;
+  }
+  if(titAdd4 < amountOfTits){
+    titAdd4 += titCount;
+  }
+  else{
+    titAdd4 = 0;
+  }
+  if(titAdd5 < amountOfTits){
+    titAdd5 += titCount;
+  }
+  else{
+    titAdd5 = 0;
+  }
+  if(titAdd6 < amountOfTits){
+    titAdd6 += titCount;
+  }
+  else{
+    titAdd6 = 0;
+  }
+  if(titAdd7 < amountOfTits){
+    titAdd7 += titCount;
+  }
+  else{
+    titAdd7 = 0;
+  }
+  if(titAdd8 < amountOfTits){
+    titAdd8 += titCount;
+  }
+  else{
+    titAdd8 = 0;
+  }
+  if(titAdd9 < amountOfTits){
+    titAdd9 += titCount;
+  }
+  else{
+    titAdd9 = 0;
+  }
+
+  if(titAr[titAdd5] == "ranMoji"){
+    titAr[titAdd5] = moji[Math.floor(Math.random()*moji.length)];
+  };
+
+  if(counter < 9){
+    if(titAr[titAdd1] == "A"){
+      perma = perma;
+    }
+  }
+  else{
+    if(titAr[titAdd1] == "A"){
+      titAr[titAdd1] = moji[Math.floor(Math.random()*moji.length)];
+    }
+    perma =  titAr[titAdd1] + perma;
+  };
+
+  title.innerHTML = "IS"+ titAr[titAdd5] + titAr[titAdd4] + "C" + " V" + titAr[titAdd3] + "N" + " DEN " + titAr[titAdd2] + "KER" + " " + perma;
+
+  if (perma.length > maxTitleLength) {
+    // Calculate the number of characters to remove from the end
+    const charsToRemove = perma.length - maxTitleLength;
+
+    // Remove characters from the end of the string
+    perma = perma.slice(0, -charsToRemove);
+}
+  // console.log(perma);
+
+});
+
+title.onmouseover = function() {
+  testje = true;
+};
+
+title.onmouseout = function() {
+  testje = false;
+};
+
+window.onblur = function() {
+  testje = true;
+  console.log("blurred");
+};
+
+window.onfocus = function() {
+  testje = false;
+  console.log("active again");
+};
+
+const hueRanges = [
+  { min: 30, max: 75 },
+  { min: 30, max: 75 },
+  { min: 30, max: 75 },
+  { min: 30, max: 75 },
+  { min: 30, max: 75 },
+  { min: 30, max: 75 },
+  { min: 30, max: 75 },
+  { min: 30, max: 75 },
+  { min: 30, max: 75 },
+  { min: 30, max: 75 },
+
+];
+
+let hues = [];
+let directions = [];
+let spanCol = [];
+
+function getRandomDirection() {
+  return Math.random() * (1 - 0.5) + 0.2;
+}
+
+for (let i = 0; i < hueRanges.length; i++) {
+  hues[i] = hueRanges[i].min;
+  spanCol[i] = `hsl(270, 80%, ${hues[i]}%)`;
+  directions[i] = getRandomDirection();
+}
+
+let nodeLink;
+
+let logColor = (() => {
+  for (let i = 0; i < hues.length; i++) {
+      hues[i] += directions[i];
+      if (hues[i] < hueRanges[i].min || hues[i] > hueRanges[i].max) {
+          directions[i] *= -1;
+      }
+      spanCol[i] = `hsl(270, 80%, ${hues[i]}%)`;
+  }
+    let links = document.querySelectorAll('.spanLinks');
+
+    links.forEach(link => {
+
+        if (link !== nodeLink) {
+          if(link.id == "spL0"){
+          link.style.color = spanCol[0];
+        }
+        if(link.id == "spL1"){
+          link.style.color = spanCol[1];
+        }
+        if(link.id == "spL2"){
+          link.style.color = spanCol[2];
+        }
+        if(link.id == "spL3"){
+          link.style.color = spanCol[3];
+        }
+        if(link.id == "spL4"){
+          link.style.color = spanCol[4];
+        }
+        if(link.id == "spL5"){
+          link.style.color = spanCol[5];
+        }
+        if(link.id == "spL6"){
+          link.style.color = spanCol[6];
+        }
+        if(link.id == "spL7"){
+          link.style.color = spanCol[7];
+        }
+        if(link.id == "spL8"){
+          link.style.color = spanCol[8];
+        }
+        if(link.id == "spL9"){
+          link.style.color = spanCol[9];
         }
       }
-      else {
-        clearInterval(myIntervalID);
-        myIntervalID = setInterval(runnerFunc, 100);
-      }
+    });
 
-      amountOfTits = titAr.length-1;
+    requestAnimationFrame(logColor);
+});
 
-    if(titAdd1 < amountOfTits){
-      titAdd1 += titCount;
-    }  else{
-      titAdd1 = 0;
-    }
+logColor();
 
-    if(titAdd2 < amountOfTits){
-      titAdd2 += titCount;
-    }
-    else{
-      titAdd2 = 0;
-    }
-    if(titAdd3 < amountOfTits){
-      titAdd3 += titCount;
-    }
-    else{
-      titAdd3 = 0;
-    }
-    if(titAdd4 < amountOfTits){
-      titAdd4 += titCount;
-    }
-    else{
-      titAdd4 = 0;
-    }
-    if(titAdd5 < amountOfTits){
-      titAdd5 += titCount;
-    }
-    else{
-      titAdd5 = 0;
-    }
-    if(titAdd6 < amountOfTits){
-      titAdd6 += titCount;
-    }
-    else{
-      titAdd6 = 0;
-    }
-    if(titAdd7 < amountOfTits){
-      titAdd7 += titCount;
-    }
-    else{
-      titAdd7 = 0;
-    }
-    if(titAdd8 < amountOfTits){
-      titAdd8 += titCount;
-    }
-    else{
-      titAdd8 = 0;
-    }
-    if(titAdd9 < amountOfTits){
-      titAdd9 += titCount;
-    }
-    else{
-      titAdd9 = 0;
-    }
+function fadeColor(link, originalColor) {
+  link.style.transition = "color 0.2s"; // Smooth transition over 0.5 seconds
+  link.style.color = originalColor;
+}
 
-    if(titAr[titAdd5] == "ranMoji"){
-      titAr[titAdd5] = moji[Math.floor(Math.random()*moji.length)];
+var parentAnchor = document.getElementById('naam');
+
+function handleMutations(mutationsList, observer) {
+    // Koppel IDs aan de juiste image-URL
+    const imageMap = {
+        spL0: 'https://isaacglyp.github.io/cargopublic/img/img1.png',
+        spL1: 'https://isaacglyp.github.io/cargopublic/img/img2.png',
+        spL2: 'https://isaacglyp.github.io/cargopublic/img/img3.png',
+        spL3: 'https://isaacglyp.github.io/cargopublic/img/img4.png',
+        spL4: 'https://isaacglyp.github.io/cargopublic/img/img5.png',
+        spL5: 'https://isaacglyp.github.io/cargopublic/img/img6.png',
+        spL6: 'https://isaacglyp.github.io/cargopublic/img/img7.png',
+        spL7: 'https://isaacglyp.github.io/cargopublic/img/img8.png',
+        spL8: 'https://isaacglyp.github.io/cargopublic/img/img9.png',
+        spL9: 'https://isaacglyp.github.io/cargopublic/img/img10.png'
     };
 
-    if(counter < 9){
-      if(titAr[titAdd1] == "A"){
-        perma = perma;
-      }
-    }
-    else{
-      if(titAr[titAdd1] == "A"){
-        titAr[titAdd1] = moji[Math.floor(Math.random()*moji.length)];
-      }
-      perma =  titAr[titAdd1] + perma;
-    };
+    mutationsList.forEach(function(mutation) {
+        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+            mutation.addedNodes.forEach(function(node) {
+                if (node.nodeType === 1 && node.classList.contains('spanLinks')) {
 
-    title.innerHTML = "IS"+ titAr[titAdd5] + titAr[titAdd4] + "C" + " V" + titAr[titAdd3] + "N" + " DEN " + titAr[titAdd2] + "KER" + " " + perma;
+                    node.addEventListener('mouseover', function() {
+                        nodeLink = this;
+                        this.style.color = "#ff4e2f";
 
-    if (perma.length > maxTitleLength) {
-      const charsToRemove = perma.length - maxTitleLength;
-      perma = perma.slice(0, -charsToRemove);
-    }
-  });
+                        // Voeg afbeelding toe als die nog niet bestaat
+                        if (!this.querySelector('img')) {
+                            const img = document.createElement('img');
+                            const id = this.id;
+                            img.src = imageMap[id] || 'https://isaacglyp.github.io/cargopublic/img/fallback.png'; // fallback als ID niet in map zit
+                            img.style.width = '100%';
+                            this.appendChild(img);
+                        }
+                    });
 
-  title.onmouseover = function() {
-    testje = true;
-  };
+                    node.addEventListener('mouseout', function() {
+                        if(this.id == "spL0"){
+                          fadeColor(this, spanCol[0]);
+                        }
+                        if(this.id == "spL1"){
+                          fadeColor(this, spanCol[1]);
+                        }
+                        if(this.id == "spL2"){
+                          fadeColor(this, spanCol[2]);
+                        }
+                        if(this.id == "spL3"){
+                          fadeColor(this, spanCol[3]);
+                        }
+                        if(this.id == "spL4"){
+                          fadeColor(this, spanCol[4]);
+                        }
+                        if(this.id == "spL5"){
+                          fadeColor(this, spanCol[5]);
+                        }
+                        if(this.id == "spL6"){
+                          fadeColor(this, spanCol[6]);
+                        }
+                        if(this.id == "spL7"){
+                          fadeColor(this, spanCol[7]);
+                        }
+                        if(this.id == "spL8"){
+                          fadeColor(this, spanCol[8]);
+                        }
+                       if(this.id == "spL9"){
+                          fadeColor(this, spanCol[9]);
+                        }
 
-  title.onmouseout = function() {
-    testje = false;
-  };
+                        // Verwijder afbeelding als die bestaat
+                        const img = this.querySelector('img');
+                        if(img) {
+                            img.remove();
+                        }
+                    });
 
-  window.onblur = function() {
-    testje = true;
-    console.log("blurred");
-  };
-
-  window.onfocus = function() {
-    testje = false;
-    console.log("active again");
-  };
-
-  // ------------------- color animation -------------------
-  const hueRanges = [
-    { min: 30, max: 75 },
-    { min: 30, max: 75 },
-    { min: 30, max: 75 },
-    { min: 30, max: 75 },
-    { min: 30, max: 75 },
-    { min: 30, max: 75 },
-    { min: 30, max: 75 },
-    { min: 30, max: 75 },
-    { min: 30, max: 75 },
-    { min: 30, max: 75 },
-  ];
-
-  let hues = [];
-  let directions = [];
-  let spanCol = [];
-
-  function getRandomDirection() {
-    return Math.random() * (1 - 0.5) + 0.2;
-  }
-
-  for (let i = 0; i < hueRanges.length; i++) {
-    hues[i] = hueRanges[i].min;
-    spanCol[i] = `hsl(270, 80%, ${hues[i]}%)`;
-    directions[i] = getRandomDirection();
-  }
-
-  let nodeLink;
-
-  let logColor = (() => {
-    for (let i = 0; i < hues.length; i++) {
-        hues[i] += directions[i];
-        if (hues[i] < hueRanges[i].min || hues[i] > hueRanges[i].max) {
-            directions[i] *= -1;
+                }
+            });
         }
-        spanCol[i] = `hsl(270, 80%, ${hues[i]}%)`;
-    }
-      let links = document.querySelectorAll('.spanLinks');
+    });
+}
 
-      links.forEach(link => {
 
-          if (link !== nodeLink) {
-            if(link.id == "spL0"){
-            link.style.color = spanCol[0];
-          }
-          if(link.id == "spL1"){
-            link.style.color = spanCol[1];
-          }
-          if(link.id == "spL2"){
-            link.style.color = spanCol[2];
-          }
-          if(link.id == "spL3"){
-            link.style.color = spanCol[3];
-          }
-          if(link.id == "spL4"){
-            link.style.color = spanCol[4];
-          }
-          if(link.id == "spL5"){
-            link.style.color = spanCol[5];
-          }
-          if(link.id == "spL6"){
-            link.style.color = spanCol[6];
-          }
-          if(link.id == "spL7"){
-            link.style.color = spanCol[7];
-          }
-          if(link.id == "spL8"){
-            link.style.color = spanCol[8];
-          }
-          if(link.id == "spL9"){
-            link.style.color = spanCol[9];
-          }
-        }
-      });
+var observer = new MutationObserver(handleMutations);
+var observerConfig = { childList: true };
+observer.observe(parentAnchor, observerConfig);
 
-      requestAnimationFrame(logColor);
-  });
 
-  function fadeColor(link, originalColor) {
-    link.style.transition = "color 0.2s";
-    link.style.color = originalColor;
-  }
+logColor();
+let myIntervalID = setInterval(runnerFunc, 1000);
 
-  // call logColor once to kick off
-  logColor();
 
-  // ------------------- image hover / MutationObserver -------------------
-  var parentAnchor = document.getElementById('naam');
 
-  function handleMutations(mutationsList, observer) {
-      const imageMap = {
-          spL0: 'https://isaacglyp.github.io/cargopublic/img/img1.png',
-          spL1: 'https://isaacglyp.github.io/cargopublic/img/img2.png',
-          spL2: 'https://isaacglyp.github.io/cargopublic/img/img3.png',
-          spL3: 'https://isaacglyp.github.io/cargopublic/img/img4.png',
-          spL4: 'https://isaacglyp.github.io/cargopublic/img/img5.png',
-          spL5: 'https://isaacglyp.github.io/cargopublic/img/img6.png',
-          spL6: 'https://isaacglyp.github.io/cargopublic/img/img7.png',
-          spL7: 'https://isaacglyp.github.io/cargopublic/img/img8.png',
-          spL8: 'https://isaacglyp.github.io/cargopublic/img/img9.png',
-          spL9: 'https://isaacglyp.github.io/cargopublic/img/img10.png'
-      };
 
-      mutationsList.forEach(function(mutation) {
-          if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-              mutation.addedNodes.forEach(function(node) {
-                  if (node.nodeType === 1 && node.classList.contains('spanLinks')) {
 
-                      node.addEventListener('mouseover', function() {
-                          nodeLink = this;
-                          this.style.color = "#ff4e2f";
 
-                          // Voeg afbeelding toe als die nog niet bestaat
-                          if (!this.querySelector('img')) {
-                              const img = document.createElement('img');
-                              const id = this.id;
-                              img.src = imageMap[id] || 'https://isaacglyp.github.io/cargopublic/img/fallback.png';
-                              img.style.width = '100%';
-                              this.appendChild(img);
-                          }
-                      });
 
-                      node.addEventListener('mouseout', function() {
-                          if(this.id == "spL0"){ fadeColor(this, spanCol[0]); }
-                          if(this.id == "spL1"){ fadeColor(this, spanCol[1]); }
-                          if(this.id == "spL2"){ fadeColor(this, spanCol[2]); }
-                          if(this.id == "spL3"){ fadeColor(this, spanCol[3]); }
-                          if(this.id == "spL4"){ fadeColor(this, spanCol[4]); }
-                          if(this.id == "spL5"){ fadeColor(this, spanCol[5]); }
-                          if(this.id == "spL6"){ fadeColor(this, spanCol[6]); }
-                          if(this.id == "spL7"){ fadeColor(this, spanCol[7]); }
-                          if(this.id == "spL8"){ fadeColor(this, spanCol[8]); }
-                          if(this.id == "spL9"){ fadeColor(this, spanCol[9]); }
 
-                          // Verwijder afbeelding als die bestaat
-                          const img = this.querySelector('img');
-                          if(img) { img.remove(); }
-                      });
 
-                  }
-              });
-          }
-      });
-  }
 
-  var observer = new MutationObserver(handleMutations);
-  var observerConfig = { childList: true };
-  observer.observe(parentAnchor, observerConfig);
 
-  // start runner
-  myIntervalID = setInterval(runnerFunc, 1000);
-} // end else (desktop)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
