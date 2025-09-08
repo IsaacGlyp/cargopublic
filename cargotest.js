@@ -282,7 +282,7 @@ let directions = [];
 let spanCol = [];
 
 function getRandomDirection() {
-  return Math.random() * (1 - 0.5) + 0.2;
+  return Math.random() * (1 - 0.5) + 0.1;
 }
 
 for (let i = 0; i < hueRanges.length; i++) {
@@ -345,7 +345,7 @@ let logColor = (() => {
 logColor();
 
 function fadeColor(link, originalColor) {
-  link.style.transition = "color 0.5s"; // Smooth transition over 0.5 seconds
+  link.style.transition = "color 0.3s"; // Smooth transition over 0.5 seconds
   link.style.color = originalColor;
 }
 
@@ -438,6 +438,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
