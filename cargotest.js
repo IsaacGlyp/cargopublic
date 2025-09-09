@@ -61,9 +61,11 @@
     }
   }
 
-  // run in all the same cases we used before
   document.addEventListener("DOMContentLoaded", setMenuMode);
-  window.addEventListener("locationchange", setMenuMode);
+  window.addEventListener("locationchange", () => {
+    // delay so Cargo has time to swap in the new page body/classes
+    setTimeout(setMenuMode, 50);
+  });
 
   // fallback: watch main content swaps
   const contentRoot = document.querySelector(".page") || document.querySelector(".page-layout") || document.body;
@@ -524,6 +526,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
