@@ -468,7 +468,7 @@ function handleMutations(mutationsList, observer) {
                             const img = document.createElement('img');
                             const id = this.id;
                             img.src = imageMap[id] || 'https://isaacglyp.github.io/cargopublic/img/fallback.png'; // fallback als ID niet in map zit
-                            img.style.width = '100%';
+                            img.classList.add('menu-img');
                             this.appendChild(img);
                         }
                     });
@@ -526,6 +526,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
