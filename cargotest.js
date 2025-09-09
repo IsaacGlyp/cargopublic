@@ -1,6 +1,18 @@
   
 "use strict";
+function setMenuMode() {
+  const body = document.body;
+  const menuWrapper = document.querySelector(".wholepage");
+  if (!menuWrapper) return;
 
+  if (body.dataset.slug === "homepage3") {
+    menuWrapper.classList.add("menu-fullscreen");
+    menuWrapper.classList.remove("menu-sidebar");
+  } else {
+    menuWrapper.classList.add("menu-sidebar");
+    menuWrapper.classList.remove("menu-fullscreen");
+  }
+}
 // -------------------
 // MOBILE CHECK
 // -------------------
@@ -442,6 +454,7 @@ let myIntervalID = setInterval(runnerFunc, 1000);
 
 document.addEventListener("DOMContentLoaded", initMyScript);
 document.addEventListener("cargo-page-load", initMyScript);
+
 
 
 
