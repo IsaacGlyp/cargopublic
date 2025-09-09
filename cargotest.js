@@ -440,6 +440,8 @@ logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
 
 
+document.addEventListener("DOMContentLoaded", initMyScript);
+document.addEventListener("cargo-page-load", initMyScript);
 
 
 
