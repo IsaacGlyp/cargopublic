@@ -1,64 +1,74 @@
   
 "use strict";
-
-// ===== Mode switcher: homepage fullscreen vs project sidebar =====
+// ===== Mode switcher: ensure true fullscreen and avoid layout clipping =====
 (function () {
-  // 1) Fire a custom "locationchange" event on SPA navigations
+  // SPA navigation helper (same as before)
   const dispatch = () => window.dispatchEvent(new Event("locationchange"));
-  const _pushState = history.pushState;
-  history.pushState = function () { _pushState.apply(this, arguments); dispatch(); };
-  const _replaceState = history.replaceState;
-  history.replaceState = function () { _replaceState.apply(this, arguments); dispatch(); };
+  const _push = history.pushState;
+  history.pushState = function () { _push.apply(this, arguments); dispatch(); };
+  const _replace = history.replaceState;
+  history.replaceState = function () { _replace.apply(this, arguments); dispatch(); };
   window.addEventListener("popstate", dispatch);
 
-  // 2) Decide if we're on the homepage
   function isHome() {
-    // Normalize path (remove trailing slash)
     const path = (location.pathname || "/").replace(/\/+$/, "");
-    // Typical Cargo home paths:
     if (path === "" || path === "/") return true;
     if (/\/(home|index)$/i.test(path)) return true;
-
-    // Optional: also detect by body attributes/classes if present
     if (document.body.dataset && /home/i.test(document.body.dataset.slug || "")) return true;
     if (document.body.className && /home/i.test(document.body.className)) return true;
-
-    // Optional fallback: allow a hidden flag you can add ONLY on the homepage content
-    // <div id="home-flag" style="display:none"></div>
-    if (document.getElementById("home-flag")) return true;
-
+    if (document.getElementById("home-flag")) return true; // optional manual flag
     return false;
   }
 
-  // 3) Toggle the layout class on your pinned wrapper
   function setMenuMode() {
     const menuWrapper = document.querySelector(".wholepage");
     if (!menuWrapper) return;
 
     const home = isHome();
+
+    // toggle classes
     menuWrapper.classList.toggle("menu-fullscreen", home);
     menuWrapper.classList.toggle("menu-sidebar", !home);
 
-    // (Optional) quick debug in the browser console:
-    // console.info("[menu] path:", location.pathname, "isHome:", home);
+    // toggle global assist class so we can neutralize ancestor transforms/constraints
+    document.documentElement.classList.toggle("menu-is-fullscreen", home);
+
+    // Defensive: if the menu still appears clipped due to weird Cargo scoping,
+    // temporarily move it to document.body while fullscreen.
+    try {
+      if (home) {
+        if (!menuWrapper.__originalParent) {
+          menuWrapper.__originalParent = menuWrapper.parentNode;
+          menuWrapper.__originalSibling = menuWrapper.nextSibling;
+        }
+        if (menuWrapper.parentNode !== document.body) {
+          document.body.appendChild(menuWrapper);
+          menuWrapper.__moved = true;
+        }
+      } else {
+        if (menuWrapper.__moved && menuWrapper.__originalParent) {
+          if (menuWrapper.__originalSibling) {
+            menuWrapper.__originalParent.insertBefore(menuWrapper, menuWrapper.__originalSibling);
+          } else {
+            menuWrapper.__originalParent.appendChild(menuWrapper);
+          }
+          menuWrapper.__moved = false;
+        }
+      }
+    } catch (e) {
+      // don't break anything if moving fails
+      console.warn("[menu] move/restore failed:", e);
+    }
   }
 
-  // 4) Run now, on DOM ready, on SPA route changes, and when Cargo swaps content
+  // run in all the same cases we used before
   document.addEventListener("DOMContentLoaded", setMenuMode);
   window.addEventListener("locationchange", setMenuMode);
 
-  // Backup: observe main content mutations (Cargo swaps inner DOM on nav)
-  const contentRoot =
-    document.querySelector(".page") ||
-    document.querySelector(".page-layout") ||
-    document.body;
-
-  new MutationObserver(() => setMenuMode()).observe(contentRoot, {
-    childList: true,
-    subtree: true
-  });
+  // fallback: watch main content swaps
+  const contentRoot = document.querySelector(".page") || document.querySelector(".page-layout") || document.body;
+  new MutationObserver(() => setMenuMode()).observe(contentRoot, { childList: true, subtree: true });
 })();
-
 
 
 
@@ -514,6 +524,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
