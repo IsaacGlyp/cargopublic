@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Stop further execution of the desktop code
     return; // nothing else runs
   }
-});
+
 
 // ===== Mode switcher: ensure true fullscreen and avoid layout clipping =====
 (function () {
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function() {
   new MutationObserver(() => setMenuMode()).observe(contentRoot, { childList: true, subtree: true });
 })();
 
-
+});
 
 
 
@@ -529,6 +529,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
