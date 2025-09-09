@@ -5,7 +5,7 @@ function setMenuMode() {
   const menuWrapper = document.querySelector(".wholepage");
   if (!menuWrapper) return;
 
-  if (body.dataset.slug === "homepage3") {
+  if (body.dataset.slug === "home") {
     menuWrapper.classList.add("menu-fullscreen");
     menuWrapper.classList.remove("menu-sidebar");
   } else {
@@ -454,6 +454,7 @@ let myIntervalID = setInterval(runnerFunc, 1000);
 
 document.addEventListener("DOMContentLoaded", initMyScript);
 document.addEventListener("cargo-page-load", initMyScript);
+
 
 
 
