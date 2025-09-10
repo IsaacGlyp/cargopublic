@@ -142,16 +142,16 @@ var title = document.getElementById("naam");
 
 var perma = "";
 
-var link1 = "<a href=\"#page-1\"class=\"spanLinks\" id=\'spL0\'> (The Promise of Something Silver) </a>"; 
-var link2 = "<a href=\"#page-2\"class=\"spanLinks\" id=\'spL1\'> (P.P.T.X.) </a>";
-var link3 = "<a href=\"#page-3\"class=\"spanLinks\" id=\'spL2\'> (The Slideshow Manifold) </a>";
-var link4 = "<a href=\"#page-4\"class=\"spanLinks\" id=\'spL3\'> (Plagued by the Preview) </a>";
-var link5 = "<a href=\"#page-5\"class=\"spanLinks\" id=\'spL4\'> (Still Lifes for Empty Shelves) </a>";
-var link6 = "<a href=\"#page-6\"class=\"spanLinks\" id=\'spL5\'> (MyDementedPC) </a>";
-var link7 = "<a href=\"#page-7\"class=\"spanLinks\" id=\'spL6\'> (SECRETFACT.JPEG) </a>";
-var link8 = "<a href=\"#page-8\"class=\"spanLinks\" id=\'spL7\'> (Measuring Leaves, Gathering Trees) </a>";
-var link9 = "<a href=\"#page-9\"class=\"spanLinks\" id=\'spL8\'> (60fps Mirrored Vision) </a>";
-var link10 = "<a href=\"#page-10\"class=\"spanLinks\" id=\'spL9\'> (A Species of Nodes) </a>";
+var link1 = "<a href=\"#The-Promise-of-Something-Silver\"class=\"spanLinks\" id=\'spL0\'> (The Promise of Something Silver) </a>"; 
+var link2 = "<a href=\"#pptx\"class=\"spanLinks\" id=\'spL1\'> (P.P.T.X.) </a>";
+var link3 = "<a href=\"#The-Slideshow-Manifold\"class=\"spanLinks\" id=\'spL2\'> (The Slideshow Manifold) </a>";
+var link4 = "<a href=\"#Plagued-by-the-Preview\"class=\"spanLinks\" id=\'spL3\'> (Plagued by the Preview) </a>";
+var link5 = "<a href=\"#Still-Lifes-for-Empty-Shelves\"class=\"spanLinks\" id=\'spL4\'> (Still Lifes for Empty Shelves) </a>";
+var link6 = "<a href=\"#MyDementedPC\"class=\"spanLinks\" id=\'spL5\'> (MyDementedPC) </a>";
+var link7 = "<a href=\"#SECRETFACT\"class=\"spanLinks\" id=\'spL6\'> (SECRETFACT.JPEG) </a>";
+var link8 = "<a href=\"#Measuring-Leaves-Gathering-Trees\"class=\"spanLinks\" id=\'spL7\'> (Measuring Leaves, Gathering Trees) </a>";
+var link9 = "<a href=\"#60fps-Mirrored-Vision\"class=\"spanLinks\" id=\'spL8\'> (60fps Mirrored Vision) </a>";
+var link10 = "<a href=\"#A-Species-of-Nodes\"class=\"spanLinks\" id=\'spL9\'> (A Species of Nodes) </a>";
 
 // const moji = [
 //   "♥","✈", "♫","㋡","⇆","<input type=\"checkbox\"checked=\"true\">","✓","⤭","♪","⚧","☹","⟲","a","⁂","a","☆","a","®","✴",
@@ -529,6 +529,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
