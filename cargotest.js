@@ -137,6 +137,8 @@ let titAdd6 = 6;
 let titAdd7 = 7;
 let titAdd8 = 8;
 let titAdd9 = 9;
+let titAdd9 = 10;
+let titAdd9 = 11;
 
 var title = document.getElementById("naam");
 
@@ -152,6 +154,8 @@ var link7 = "<a href=\"#SECRETFACT\"class=\"spanLinks\" id=\'spL6\'> (SECRETFACT
 var link8 = "<a href=\"#Measuring-Leaves-Gathering-Trees\"class=\"spanLinks\" id=\'spL7\'> (Measuring Leaves, Gathering Trees) </a>";
 var link9 = "<a href=\"#60fps-Mirrored-Vision\"class=\"spanLinks\" id=\'spL8\'> (60fps Mirrored Vision) </a>";
 var link10 = "<a href=\"#A-Species-of-Nodes\"class=\"spanLinks\" id=\'spL9\'> (A Species of Nodes) </a>";
+var link11 = "<a href=\"#Asemic-Selection\"class=\"spanLinks\" id=\'spL10\'> (Asemic Selection) </a>";
+var link12 = "<a href=\"#MaterialToMatter\"class=\"spanLinks\" id=\'spL11\'> (M2M) </a>";
 
 // const moji = [
 //   "♥","✈", "♫","㋡","⇆","<input type=\"checkbox\"checked=\"true\">","✓","⤭","♪","⚧","☹","⟲","a","⁂","a","☆","a","®","✴",
@@ -216,6 +220,10 @@ var  titAr = [
     "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
     link10,
     "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji",
+    link11,
+    "ranMoji","Ⓐ","Ⓐ","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji",
+    link12,
+    "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji",
   ];
 
 let titCount = 1;
@@ -365,6 +373,8 @@ const hueRanges = [
   { min: 30, max: 75 },
   { min: 30, max: 75 },
   { min: 30, max: 75 },
+  { min: 30, max: 75 },
+  { min: 30, max: 75 },
 
 ];
 
@@ -427,6 +437,12 @@ let logColor = (() => {
         if(link.id == "spL9"){
           link.style.color = spanCol[9];
         }
+        if(link.id == "spL10"){
+          link.style.color = spanCol[10];
+        }
+        if(link.id == "spL11"){
+          link.style.color = spanCol[11];
+        }
       }
     });
 
@@ -454,7 +470,9 @@ function handleMutations(mutationsList, observer) {
         spL6: 'https://isaacglyp.github.io/cargopublic/img/img7.png',
         spL7: 'https://isaacglyp.github.io/cargopublic/img/img8.png',
         spL8: 'https://isaacglyp.github.io/cargopublic/img/img9.png',
-        spL9: 'https://isaacglyp.github.io/cargopublic/img/img10.png'
+        spL9: 'https://isaacglyp.github.io/cargopublic/img/img10.png',
+        spL10: 'https://isaacglyp.github.io/cargopublic/img/img11.png',
+        spL11: 'https://isaacglyp.github.io/cargopublic/img/img12.png'
     };
 
     mutationsList.forEach(function(mutation) {
@@ -507,6 +525,12 @@ function handleMutations(mutationsList, observer) {
                        if(this.id == "spL9"){
                           fadeColor(this, spanCol[9]);
                         }
+                       if(this.id == "spL10"){
+                          fadeColor(this, spanCol[10]);
+                        }
+                       if(this.id == "spL11"){
+                          fadeColor(this, spanCol[11]);
+                        }
 
                         // Verwijder afbeelding als die bestaat
                         const img = this.querySelector('img');
@@ -529,6 +553,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
