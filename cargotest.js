@@ -1,18 +1,7 @@
   
 "use strict";
-// ===== HIDE .other BY DEFAULT =====
-// This ensures no flash of the info panel
-document.addEventListener("DOMContentLoaded", function() {
-  document.querySelectorAll('.other').forEach(el => {
-    el.style.display = 'none';
-  });
-});
-
 document.addEventListener("DOMContentLoaded", function() {
   const isMobile = window.innerWidth <= 768 || /Mobi|Android/i.test(navigator.userAgent);
-  const isHome = document.body.classList.contains('homepage3'); // your homepage class
-
-  // ===== MOBILE LOGIC =====
   if (isMobile) {
     // Hide desktop name and menu
     const desktopName = document.getElementById("naam");
@@ -31,21 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
       }, 200);
     }
 
-    // On mobile, you can also hide or show .other if needed
-    document.querySelectorAll('.other').forEach(el => el.style.display = 'none');
-
     // Stop further execution of the desktop code
-    return;
+    return; // nothing else runs
   }
-
-  // ===== DESKTOP LOGIC =====
-  document.querySelectorAll('.other').forEach(el => {
-    // Show .other everywhere except homepage
-    if (!isHome) {
-      el.style.display = 'block';
-    }
-    // On desktop homepage (.homepage3), it stays hidden
-  });
 
   // ===== Mode switcher: ensure true fullscreen and avoid layout clipping =====
   (function () {
@@ -62,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (/\/(home|index)$/i.test(path)) return true;
       if (document.body.dataset && /home/i.test(document.body.dataset.slug || "")) return true;
       if (document.body.className && /home/i.test(document.body.className)) return true;
-      if (document.getElementById("home-flag")) return true;
+      if (document.getElementById("home-flag")) return true; // optional manual flag
       return false;
     }
 
@@ -76,9 +53,20 @@ document.addEventListener("DOMContentLoaded", function() {
       menuWrapper.classList.toggle("menu-fullscreen", home);
       menuWrapper.classList.toggle("menu-sidebar", !home);
 
+      // toggle global assist class so we can neutralize ancestor transforms/constraints
       document.documentElement.classList.toggle("menu-is-fullscreen", home);
 
-      // Move menuWrapper to body if fullscreen
+      // ---------- ADDED: hide .other on homepage ----------
+      const other = document.querySelector(".other");
+      if (other) {
+        if (home) {
+          other.style.display = "none";
+        } else {
+          other.style.display = ""; // restore default for other pages
+        }
+      }
+
+      // Defensive: move to body if needed
       try {
         if (home) {
           if (!menuWrapper.__originalParent) {
@@ -105,27 +93,16 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     document.addEventListener("DOMContentLoaded", setMenuMode);
-    window.addEventListener("locationchange", () => setTimeout(setMenuMode, 50));
+    window.addEventListener("locationchange", () => {
+      setTimeout(setMenuMode, 50);
+    });
 
+    // fallback: watch main content swaps
     const contentRoot = document.querySelector(".page") || document.querySelector(".page-layout") || document.body;
     new MutationObserver(() => setMenuMode()).observe(contentRoot, { childList: true, subtree: true });
   })();
 });
 
-// ===== Optional fallback setMenuMode function =====
-function setMenuMode() {
-  const body = document.body;
-  const menuWrapper = document.querySelector(".wholepage");
-  if (!menuWrapper) return;
-
-  if (body.dataset.slug === "#home") {
-    menuWrapper.classList.add("menu-fullscreen");
-    menuWrapper.classList.remove("menu-sidebar");
-  } else {
-    menuWrapper.classList.add("menu-sidebar");
-    menuWrapper.classList.remove("menu-fullscreen");
-  }
-}
 
 console.log("hallo wereld")
 
@@ -563,6 +540,7 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
+
 
 
 
