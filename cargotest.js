@@ -544,10 +544,10 @@ let myIntervalID = setInterval(runnerFunc, 1000);
 // ==============================================================================
 
 // ** IMPORTANT: REPLACE THIS with the actual URL/path to your image **
-const BRUSH_IMAGE_URL = 'https://i.imgur.com/your-fun-image.png'; 
+const BRUSH_IMAGE_URL = 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExODZhYjYybGpuMnhvZmxhMTdvOXcweTF6aHFsM252aXc5b3A3NnNpdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Z3ZrZyse0xFjmtYQYO/giphy.gif'; 
 
 // Set the size of the image in pixels
-const IMAGE_SIZE = 50; 
+const IMAGE_SIZE = 25; 
 
 // CONTROL: The minimum distance (in pixels) the mouse must move 
 //             before a new image is drawn. Higher number = less dense drawing.
@@ -652,3 +652,4 @@ document.addEventListener('click', () => {
 // ==============================================================================
 // 🎨 IMAGE BRUSH CODE END
 // ==============================================================================
+
