@@ -545,7 +545,7 @@ let myIntervalID = setInterval(runnerFunc, 1000);
 // ==============================================================================
 
 // ** IMPORTANT: REPLACE THIS with the actual URL/path to your image **
-const BRUSH_IMAGE_URL = 'https://static.vecteezy.com/system/resources/thumbnails/057/068/323/small/single-fresh-red-strawberry-on-table-green-background-food-fruit-sweet-macro-juicy-plant-image-photo.jpg'; 
+const BRUSH_IMAGE_URL = 'https://www.pngmart.com/files/23/Black-Blur-PNG-Image.png'; 
 
 // Set the size of the image in pixels
 const IMAGE_SIZE = 50; 
@@ -605,3 +605,4 @@ document.addEventListener('mousemove', (event) => {
 // ==============================================================================
 // 🎨 IMAGE BRUSH CODE END
 // ==============================================================================
+
