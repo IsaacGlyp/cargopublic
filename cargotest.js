@@ -436,9 +436,6 @@ let logColor = (() => {
         if(link.id == "spL11"){
           link.style.color = spanCol[11];
         }
-        if(link.id == "spL12"){
-          link.style.color = "#ff4e2f";
-        }
       }
     });
 
@@ -652,6 +649,7 @@ document.addEventListener('click', () => {
 // ==============================================================================
 // 🎨 IMAGE BRUSH CODE END
 // ==============================================================================
+
 
 
 
