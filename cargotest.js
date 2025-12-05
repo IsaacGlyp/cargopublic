@@ -539,23 +539,22 @@ observer.observe(parentAnchor, observerConfig);
 
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
-
 // ==============================================================================
 // 🎨 IMAGE BRUSH CODE START
 // ==============================================================================
 
 // ** IMPORTANT: REPLACE THIS with the actual URL/path to your image **
-const BRUSH_IMAGE_URL = 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExODZhYjYybGpuMnhvZmxhMTdvOXcweTF6aHFsM252aXc5b3A3NnNpdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Z3ZrZyse0xFjmtYQYO/giphy.gif'; 
+const BRUSH_IMAGE_URL = 'https://i.imgur.com/your-fun-image.png'; 
 
 // Set the size of the image in pixels
-const IMAGE_SIZE = 25; 
+const IMAGE_SIZE = 50; 
 
-// 🆕 CONTROL: The minimum distance (in pixels) the mouse must move 
+// CONTROL: The minimum distance (in pixels) the mouse must move 
 //             before a new image is drawn. Higher number = less dense drawing.
 const DRAW_THROTTLE = 25; // 25 pixels
 
-// 🆕 CONTROL: The opacity (0.0 to 1.0) of the drawn images.
-const IMAGE_OPACITY = 0.5; // 50% opacity
+// CONTROL: The overall opacity (0.0 to 1.0) of the drawn images.
+const IMAGE_OPACITY = 0.5; // 50% overall opacity
 
 // --- Variables for throttling ---
 let lastX = 0;
@@ -565,6 +564,13 @@ let lastY = 0;
 
 // 1. Create a <style> tag and insert the necessary CSS
 const brushStyle = document.createElement('style');
+
+// 💡 The key change is the mask-image property using a radial-gradient.
+//    - The gradient goes from 'black' (fully opaque) in the center to 
+//      'transparent' (fully invisible) at the edge.
+//    - The browser uses this gradient's luminosity to determine the image's transparency.
+const radialMask = `radial-gradient(circle at center, black 0%, black 50%, transparent 80%, transparent 100%)`;
+
 brushStyle.textContent = `
     /* Style for the main drawing container */
     #simple-js-brush-container {
@@ -584,8 +590,12 @@ brushStyle.textContent = `
         width: ${IMAGE_SIZE}px;
         height: ${IMAGE_SIZE}px;
         pointer-events: none;
-        /* 🆕 Apply opacity via CSS */
         opacity: ${IMAGE_OPACITY}; 
+        
+        /* 🆕 Apply the soft fading edge effect using CSS masking */
+        mask-image: ${radialMask};
+        -webkit-mask-image: ${radialMask}; /* For better cross-browser compatibility */
+        mask-mode: alpha; /* Standard mask mode */
     }
 `;
 document.head.appendChild(brushStyle);
@@ -596,7 +606,7 @@ brushContainer.id = 'simple-js-brush-container';
 document.body.appendChild(brushContainer);
 
 
-// --- Drawing Logic ---
+// --- Drawing Logic (remains the same) ---
 
 document.addEventListener('mousemove', (event) => {
     const currentX = event.clientX;
@@ -607,7 +617,7 @@ document.addEventListener('mousemove', (event) => {
         Math.pow(currentX - lastX, 2) + Math.pow(currentY - lastY, 2)
     );
 
-    // 🆕 Check if the movement is greater than the defined throttle distance
+    // Check if the movement is greater than the defined throttle distance
     if (distance > DRAW_THROTTLE) {
         
         // 1. Create a new <img> element
@@ -629,6 +639,14 @@ document.addEventListener('mousemove', (event) => {
         lastX = currentX;
         lastY = currentY;
     }
+});
+
+// --- Click to Clear Functionality (remains the same) ---
+
+document.addEventListener('click', () => {
+    // This removes all child elements (the drawn images) inside the brush container.
+    brushContainer.innerHTML = '';
+    console.log('Drawing cleared by click.');
 });
 
 // ==============================================================================
