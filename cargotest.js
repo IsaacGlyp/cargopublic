@@ -121,6 +121,7 @@ let titAdd8 = 8;
 let titAdd9 = 9;
 let titAdd10 = 10;
 let titAdd11 = 11;
+let titAdd11 = 12;
 
 var title = document.getElementById("naam");
 
@@ -138,6 +139,7 @@ var link9 = "<a href=\"#60fps-Mirrored-Vision\"class=\"spanLinks\" id=\'spL8\'> 
 var link10 = "<a href=\"#A-Species-of-Nodes\"class=\"spanLinks\" id=\'spL9\'> (A Species of Nodes) </a>";
 var link11 = "<a href=\"#Asemic-Selection\"class=\"spanLinks\" id=\'spL10\'> (Asemic Selection) </a>";
 var link12 = "<a href=\"#MaterialToMatter\"class=\"spanLinks\" id=\'spL11\'> (M2M) </a>";
+var link13 = "<a href=\"#about\"class=\"spanLinks\" id=\'spL11\'> (ABOUT) </a>";
 
 // const moji = [
 //   "♥","✈", "♫","㋡","⇆","<input type=\"checkbox\"checked=\"true\">","✓","⤭","♪","⚧","☹","⟲","a","⁂","a","☆","a","®","✴",
@@ -170,6 +172,8 @@ var  titAr = [
     "ranMoji","ranMoji","A","ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
     link4,
     "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
+    link13,
+    "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
     link5,
     "ranMoji","a","ranMoji","ranMoji","ranMoji","ranMoji","A","A","A","ranMoji","ranMoji","ranMoji","ranMoji",
     link6,
@@ -194,6 +198,8 @@ var  titAr = [
     "ranMoji","ranMoji","Ⓐ","ranMoji","ranMoji","ranMoji","Ⓐ ","ranMoji","A","A","A","A","ranMoji",
     link4,
     "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
+    link13,
+    "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
     link5,
     "ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
     link6,
@@ -361,6 +367,7 @@ const hueRanges = [
   { min: 30, max: 75 },
   { min: 30, max: 75 },
   { min: 30, max: 75 },
+  { min: 30, max: 75 },
 
 ];
 
@@ -429,6 +436,9 @@ let logColor = (() => {
         if(link.id == "spL11"){
           link.style.color = spanCol[11];
         }
+        if(link.id == "spL12"){
+          link.style.color = `#ff4e2f`;
+        }
       }
     });
 
@@ -458,7 +468,8 @@ function handleMutations(mutationsList, observer) {
         spL8: 'https://isaacglyp.github.io/cargopublic/img/img9.png',
         spL9: 'https://isaacglyp.github.io/cargopublic/img/img10.png',
         spL10: 'https://isaacglyp.github.io/cargopublic/img/img11.png',
-        spL11: 'https://isaacglyp.github.io/cargopublic/img/img12.png'
+        spL11: 'https://isaacglyp.github.io/cargopublic/img/img12.png',
+        spL12: 'https://isaacglyp.github.io/cargopublic/img/img13.png',
     };
 
     mutationsList.forEach(function(mutation) {
@@ -641,5 +652,6 @@ document.addEventListener('click', () => {
 // ==============================================================================
 // 🎨 IMAGE BRUSH CODE END
 // ==============================================================================
+
 
 
