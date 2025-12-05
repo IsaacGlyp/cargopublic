@@ -1,4 +1,3 @@
-  
 "use strict";
 document.addEventListener("DOMContentLoaded", function() {
   const isMobile = window.innerWidth <= 768 || /Mobi|Android/i.test(navigator.userAgent);
@@ -541,24 +540,68 @@ observer.observe(parentAnchor, observerConfig);
 logColor();
 let myIntervalID = setInterval(runnerFunc, 1000);
 
+// ==============================================================================
+// 🎨 IMAGE BRUSH CODE START
+// ==============================================================================
+
+// ** IMPORTANT: REPLACE THIS with the actual URL/path to your image **
+const BRUSH_IMAGE_URL = 'https://static.vecteezy.com/system/resources/thumbnails/057/068/323/small/single-fresh-red-strawberry-on-table-green-background-food-fruit-sweet-macro-juicy-plant-image-photo.jpg'; 
+
+// Set the size of the image in pixels
+const IMAGE_SIZE = 50; 
+
+// --- Setup: Create the container and its styles dynamically ---
+
+// 1. Create a <style> tag and insert the necessary CSS
+const brushStyle = document.createElement('style');
+brushStyle.textContent = `
+    /* Style for the main drawing container */
+    #simple-js-brush-container {
+        position: fixed; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        /* Crucial: Makes the entire drawing layer unclickable */
+        pointer-events: none; 
+    }
+
+    /* Style for each individual image placed by the "brush" */
+    .brush-image {
+        position: absolute; 
+        width: ${IMAGE_SIZE}px;
+        height: ${IMAGE_SIZE}px;
+        pointer-events: none;
+    }
+`;
+document.head.appendChild(brushStyle);
+
+// 2. Create the main container <div> and append it to the document body
+const brushContainer = document.createElement('div');
+brushContainer.id = 'simple-js-brush-container';
+document.body.appendChild(brushContainer);
 
 
+// --- Drawing Logic ---
 
+document.addEventListener('mousemove', (event) => {
+    // 1. Create a new <img> element
+    const brush = document.createElement('img');
+    
+    // 2. Set its source and class
+    brush.src = BRUSH_IMAGE_URL;
+    brush.classList.add('brush-image');
 
+    // 3. Position the image. We subtract half the image size 
+    //    so the cursor is in the center of the image.
+    brush.style.left = `${event.clientX - IMAGE_SIZE / 2}px`;
+    brush.style.top = `${event.clientY - IMAGE_SIZE / 2}px`;
 
+    // 4. Append the new image to the container
+    brushContainer.appendChild(brush);
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// ==============================================================================
+// 🎨 IMAGE BRUSH CODE END
+// ==============================================================================
