@@ -545,10 +545,21 @@ let myIntervalID = setInterval(runnerFunc, 1000);
 // ==============================================================================
 
 // ** IMPORTANT: REPLACE THIS with the actual URL/path to your image **
-const BRUSH_IMAGE_URL = 'https://www.pngmart.com/files/23/Black-Blur-PNG-Image.png'; 
+const BRUSH_IMAGE_URL = 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExODZhYjYybGpuMnhvZmxhMTdvOXcweTF6aHFsM252aXc5b3A3NnNpdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Z3ZrZyse0xFjmtYQYO/giphy.gif'; 
 
 // Set the size of the image in pixels
-const IMAGE_SIZE = 50; 
+const IMAGE_SIZE = 25; 
+
+// 🆕 CONTROL: The minimum distance (in pixels) the mouse must move 
+//             before a new image is drawn. Higher number = less dense drawing.
+const DRAW_THROTTLE = 25; // 25 pixels
+
+// 🆕 CONTROL: The opacity (0.0 to 1.0) of the drawn images.
+const IMAGE_OPACITY = 0.5; // 50% opacity
+
+// --- Variables for throttling ---
+let lastX = 0;
+let lastY = 0;
 
 // --- Setup: Create the container and its styles dynamically ---
 
@@ -573,6 +584,8 @@ brushStyle.textContent = `
         width: ${IMAGE_SIZE}px;
         height: ${IMAGE_SIZE}px;
         pointer-events: none;
+        /* 🆕 Apply opacity via CSS */
+        opacity: ${IMAGE_OPACITY}; 
     }
 `;
 document.head.appendChild(brushStyle);
@@ -586,23 +599,38 @@ document.body.appendChild(brushContainer);
 // --- Drawing Logic ---
 
 document.addEventListener('mousemove', (event) => {
-    // 1. Create a new <img> element
-    const brush = document.createElement('img');
-    
-    // 2. Set its source and class
-    brush.src = BRUSH_IMAGE_URL;
-    brush.classList.add('brush-image');
+    const currentX = event.clientX;
+    const currentY = event.clientY;
 
-    // 3. Position the image. We subtract half the image size 
-    //    so the cursor is in the center of the image.
-    brush.style.left = `${event.clientX - IMAGE_SIZE / 2}px`;
-    brush.style.top = `${event.clientY - IMAGE_SIZE / 2}px`;
+    // Calculate distance moved using Pythagorean theorem (A^2 + B^2 = C^2)
+    const distance = Math.sqrt(
+        Math.pow(currentX - lastX, 2) + Math.pow(currentY - lastY, 2)
+    );
 
-    // 4. Append the new image to the container
-    brushContainer.appendChild(brush);
+    // 🆕 Check if the movement is greater than the defined throttle distance
+    if (distance > DRAW_THROTTLE) {
+        
+        // 1. Create a new <img> element
+        const brush = document.createElement('img');
+        
+        // 2. Set its source and class
+        brush.src = BRUSH_IMAGE_URL;
+        brush.classList.add('brush-image');
+
+        // 3. Position the image. We subtract half the image size 
+        //    so the cursor is in the center of the image.
+        brush.style.left = `${currentX - IMAGE_SIZE / 2}px`;
+        brush.style.top = `${currentY - IMAGE_SIZE / 2}px`;
+
+        // 4. Append the new image to the container
+        brushContainer.appendChild(brush);
+        
+        // 5. Update the last position drawn
+        lastX = currentX;
+        lastY = currentY;
+    }
 });
 
 // ==============================================================================
 // 🎨 IMAGE BRUSH CODE END
 // ==============================================================================
-
