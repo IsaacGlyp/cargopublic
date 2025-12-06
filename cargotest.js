@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
       mobileName.style.display = "inline";
 
       const moji = ["@", "A", "∂", "𝒶", "a", "ᵃ", "Ⓐ"];
-      const name = "ISAAC VAN DEN AKER";
+      const name = "ISAAC<br>VAN DEN AKER";
 
       setInterval(() => {
         mobileName.innerHTML = name.replace(/a/gi, () => moji[Math.floor(Math.random() * moji.length)]);
@@ -652,6 +652,7 @@ document.addEventListener('click', () => {
 // ==============================================================================
 // 🎨 IMAGE BRUSH CODE END
 // ==============================================================================
+
 
 
 
