@@ -139,7 +139,7 @@ var link9 = "<a href=\"#60fps-Mirrored-Vision\"class=\"spanLinks\" id=\'spL8\'> 
 var link10 = "<a href=\"#A-Species-of-Nodes\"class=\"spanLinks\" id=\'spL9\'> (A Species of Nodes) </a>";
 var link11 = "<a href=\"#Asemic-Selection\"class=\"spanLinks\" id=\'spL10\'> (Asemic Selection) </a>";
 var link12 = "<a href=\"#MaterialToMatter\"class=\"spanLinks\" id=\'spL11\'> (M2M) </a>";
-var link13 = "<a href=\"#about\"class=\"spanLinks\" id=\'spL12\'> (ABOUT ME) </a>";
+var link13 = "<a href=\"#about\"class=\"spanLinks\" id=\'spL12\'> (A҉B҉O҉U҉T҉) </a>";
 
 // const moji = [
 //   "♥","✈", "♫","㋡","⇆","<input type=\"checkbox\"checked=\"true\">","✓","⤭","♪","⚧","☹","⟲","a","⁂","a","☆","a","®","✴",
@@ -652,6 +652,7 @@ document.addEventListener('click', () => {
 // ==============================================================================
 // 🎨 IMAGE BRUSH CODE END
 // ==============================================================================
+
 
 
 
