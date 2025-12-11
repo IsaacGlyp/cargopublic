@@ -205,6 +205,8 @@ var  titAr = [
     "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji", 
     link11,
     "ranMoji","Ⓐ","Ⓐ","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji",
+    link14,
+    "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji",
     link12,
     "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji",
     link1,
@@ -233,6 +235,8 @@ var  titAr = [
     "ranMoji","Ⓐ","Ⓐ","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji",
     link12,
     "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji",
+    link14,
+    "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji",
   ];
 
 let titCount = 1;
@@ -689,6 +693,7 @@ document.addEventListener('click', () => {
 // ==============================================================================
 // 🎨 IMAGE BRUSH CODE END
 // ==============================================================================
+
 
 
 
