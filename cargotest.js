@@ -1,6 +1,7 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", function() {
   const isMobile = window.innerWidth <= 768 || /Mobi|Android/i.test(navigator.userAgent);
+  
   if (isMobile) {
     // Hide desktop name and menu
     const desktopName = document.getElementById("naam");
@@ -8,12 +9,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Show mobile name
     const mobileName = document.getElementById("naam2");
+    
     if (mobileName) {
+      // **NEW LOGIC: Wrap the mobileName element in a link (or treat it as one)**
+      // The most straightforward way is to listen for a click and redirect.
+      mobileName.style.cursor = "pointer"; // Indicate it's clickable
+
+      mobileName.addEventListener('click', function() {
+        window.location.href = "https://isaaaaac.com";
+      });
+
       mobileName.style.display = "inline";
 
       const moji = ["@", "A", "∂", "𝒶", "a", "ᵃ", "Ⓐ"];
       const name = "ISAAC VAN DEN AKER";
 
+      // Existing logic to change the name visually
       setInterval(() => {
         mobileName.innerHTML = name.replace(/a/gi, () => moji[Math.floor(Math.random() * moji.length)]);
       }, 200);
@@ -652,6 +663,7 @@ document.addEventListener('click', () => {
 // ==============================================================================
 // 🎨 IMAGE BRUSH CODE END
 // ==============================================================================
+
 
 
 
