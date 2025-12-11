@@ -137,6 +137,7 @@ let titAdd9 = 9;
 let titAdd10 = 10;
 let titAdd11 = 11;
 let titAdd12 = 12;
+let titAdd12 = 13;
 
 var title = document.getElementById("naam");
 
@@ -155,6 +156,7 @@ var link10 = "<a href=\"#A-Species-of-Nodes\"class=\"spanLinks\" id=\'spL9\'> (A
 var link11 = "<a href=\"#Asemic-Selection\"class=\"spanLinks\" id=\'spL10\'> (Asemic Selection) </a>";
 var link12 = "<a href=\"#MaterialToMatter\"class=\"spanLinks\" id=\'spL11\'> (M2M) </a>";
 var link13 = "<a href=\"#about\"class=\"spanLinks\" id=\'spL12\'> (A҉B҉O҉U҉T҉) </a>";
+var link14 = "<a href=\"#passive-observers\"class=\"spanLinks\" id=\'spL13\'> (Passive Observers) </a>";
 
 // const moji = [
 //   "♥","✈", "♫","㋡","⇆","<input type=\"checkbox\"checked=\"true\">","✓","⤭","♪","⚧","☹","⟲","a","⁂","a","☆","a","®","✴",
@@ -383,6 +385,7 @@ const hueRanges = [
   { min: 30, max: 75 },
   { min: 30, max: 75 },
   { min: 30, max: 75 },
+  { min: 30, max: 75 },
 
 ];
 
@@ -454,6 +457,9 @@ let logColor = (() => {
           if(link.id == "spL12"){
           link.style.color = "#ff4e2f";
         }
+         if(link.id == "spL12"){
+          link.style.color = spanCol[12];
+        }
       }
     });
 
@@ -485,6 +491,7 @@ function handleMutations(mutationsList, observer) {
         spL10: 'https://isaacglyp.github.io/cargopublic/img/img11.png',
         spL11: 'https://isaacglyp.github.io/cargopublic/img/img12.png',
         spL12: 'https://isaacglyp.github.io/cargopublic/img/img13.png',
+        spL13: 'https://isaacglyp.github.io/cargopublic/img/img14.png',
     };
 
     mutationsList.forEach(function(mutation) {
@@ -554,6 +561,9 @@ function handleMutations(mutationsList, observer) {
                         }
                       if(this.id == "spL12"){
                           fadeColor(this, "#ff4e2f");
+                        }
+                     if(this.id == "spL13"){
+                          fadeColor(this, spanCol[13]);
                         }
 
                         // Verwijder afbeelding als die bestaat
@@ -679,6 +689,7 @@ document.addEventListener('click', () => {
 // ==============================================================================
 // 🎨 IMAGE BRUSH CODE END
 // ==============================================================================
+
 
 
 
