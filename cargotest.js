@@ -137,7 +137,7 @@ let titAdd9 = 9;
 let titAdd10 = 10;
 let titAdd11 = 11;
 let titAdd12 = 12;
-let titAdd12 = 13;
+let titAdd13 = 13;
 
 var title = document.getElementById("naam");
 
@@ -693,6 +693,7 @@ document.addEventListener('click', () => {
 // ==============================================================================
 // 🎨 IMAGE BRUSH CODE END
 // ==============================================================================
+
 
 
 
