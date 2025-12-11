@@ -498,7 +498,7 @@ function handleMutations(mutationsList, observer) {
                     
                     if (linkId === 'spL12') {
                         // Change to GREEN (or your desired color, e.g., 'green' or a hex code like '#00ff00')
-                        this.style.color = "#00ff00"; // Changed from red to a bright green hex code
+                        this.style.color = "#81ff33"; // Changed from red to a bright green hex code
                     } else {
                         // Keep the default red for all other 'spanLinks'
                         this.style.color = "#ff4e2f"; // The original red hex code
@@ -551,6 +551,9 @@ function handleMutations(mutationsList, observer) {
                         }
                        if(this.id == "spL11"){
                           fadeColor(this, spanCol[11]);
+                        }
+                      if(this.id == "spL12"){
+                          fadeColor(this, "#ff4e2f");
                         }
 
                         // Verwijder afbeelding als die bestaat
@@ -676,6 +679,7 @@ document.addEventListener('click', () => {
 // ==============================================================================
 // 🎨 IMAGE BRUSH CODE END
 // ==============================================================================
+
 
 
 
