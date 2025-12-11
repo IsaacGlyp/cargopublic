@@ -494,8 +494,17 @@ function handleMutations(mutationsList, observer) {
 
                     node.addEventListener('mouseover', function() {
                         nodeLink = this;
-                        this.style.color = "#ff4e2f";
-
+                     const linkId = this.id;
+                    
+                    if (linkId === 'spL12') {
+                        // Change to GREEN (or your desired color, e.g., 'green' or a hex code like '#00ff00')
+                        this.style.color = "#00ff00"; // Changed from red to a bright green hex code
+                    } else {
+                        // Keep the default red for all other 'spanLinks'
+                        this.style.color = "#ff4e2f"; // The original red hex code
+                    }
+                        
+                        
                         // Voeg afbeelding toe als die nog niet bestaat
                         if (!this.querySelector('img')) {
                             const img = document.createElement('img');
@@ -667,6 +676,7 @@ document.addEventListener('click', () => {
 // ==============================================================================
 // 🎨 IMAGE BRUSH CODE END
 // ==============================================================================
+
 
 
 
