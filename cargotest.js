@@ -144,7 +144,7 @@ var title = document.getElementById("naam");
 var perma = "";
 
 var link1 = "<a href=\"#The-Promise-of-Something-Silver\"class=\"spanLinks\" id=\'spL0\'> (The Promise of Something Silver) </a>"; 
-var link2 = "<a href=\"#fountain-2027\"class=\"spanLinks\" id=\'spL14\'> (Fountain 2027)</a>";
+var link2 = "<a href=\"#pptx\"class=\"spanLinks\" id=\'spL1\'> (P.P.T.X.) </a>";
 var link3 = "<a href=\"#The-Slideshow-Manifold\"class=\"spanLinks\" id=\'spL2\'> (The Slideshow Manifold) </a>";
 var link4 = "<a href=\"#Plagued-by-the-Preview\"class=\"spanLinks\" id=\'spL3\'> (Plagued by the Preview) </a>";
 var link5 = "<a href=\"#Still-Lifes-for-Empty-Shelves\"class=\"spanLinks\" id=\'spL4\'> (Still Lifes for Empty Shelves) </a>";
@@ -157,7 +157,7 @@ var link11 = "<a href=\"#Asemic-Selection\"class=\"spanLinks\" id=\'spL10\'> (As
 var link12 = "<a href=\"#MaterialToMatter\"class=\"spanLinks\" id=\'spL11\'> (M2M) </a>";
 var link13 = "<a href=\"#about\"class=\"spanLinks\" id=\'spL12\'> (A҉B҉O҉U҉T҉) </a>";
 var link14 = "<a href=\"#passive-observers\"class=\"spanLinks\" id=\'spL13\'> (Passive Observers) </a>";
-var link15 = "<a href=\"#pptx\"class=\"spanLinks\" id=\'spL1\'> (P.P.T.X.) </a>";
+var link15 = "<a href=\"#fountain-2027\"class=\"spanLinks\" id=\'spL14\'> (Fountain 2027)</a>";
 
 // const moji = [
 //   "♥","✈", "♫","㋡","⇆","<input type=\"checkbox\"checked=\"true\">","✓","⤭","♪","⚧","☹","⟲","a","⁂","a","☆","a","®","✴",
@@ -184,7 +184,7 @@ var  titAr = [
     "ᵃ","a","Ⓐ",
     link1,
     "A","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
-    link2,
+    link15,
     "ranMoji","ranMoji","ranMoji","a ","ranMoji","a","ranMoji","ranMoji",
     link3,
     "ranMoji","ranMoji","A","ranMoji","A","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
@@ -210,11 +210,11 @@ var  titAr = [
     "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji",
     link12,
     "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji",
-    link15,
+    link2,
     "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
     link1,
     "A","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji",
-    link2,
+    link15,
     "ranMoji","ranMoji","ranMoji","a ","ranMoji","a","ranMoji","ranMoji","ranMoji","ranMoji",
     link3,
     "ranMoji","ranMoji","Ⓐ","ranMoji","ranMoji","ranMoji","Ⓐ ","ranMoji","A","A","A","A","ranMoji",
@@ -240,7 +240,7 @@ var  titAr = [
     "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji",
     link14,
     "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji",
-    link15,
+    link2,
     "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
   ];
 
