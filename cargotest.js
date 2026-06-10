@@ -157,6 +157,7 @@ var link11 = "<a href=\"#Asemic-Selection\"class=\"spanLinks\" id=\'spL10\'> (As
 var link12 = "<a href=\"#MaterialToMatter\"class=\"spanLinks\" id=\'spL11\'> (M2M) </a>";
 var link13 = "<a href=\"#about\"class=\"spanLinks\" id=\'spL12\'> (A҉B҉O҉U҉T҉) </a>";
 var link14 = "<a href=\"#passive-observers\"class=\"spanLinks\" id=\'spL13\'> (Passive Observers) </a>";
+var link15 = "<a href=\"#fountain-2027\"class=\"spanLinks\" id=\'spL14\'> (Fountain 2027)</a>";
 
 // const moji = [
 //   "♥","✈", "♫","㋡","⇆","<input type=\"checkbox\"checked=\"true\">","✓","⤭","♪","⚧","☹","⟲","a","⁂","a","☆","a","®","✴",
@@ -209,6 +210,8 @@ var  titAr = [
     "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji",
     link12,
     "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji",
+    link15,
+    "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
     link1,
     "A","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","A","ranMoji","ranMoji","ranMoji",
     link2,
@@ -237,6 +240,8 @@ var  titAr = [
     "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji",
     link14,
     "ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji", "ranMoji","ranMoji","ranMoji",
+    link15,
+    "ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji","ranMoji",
   ];
 
 let titCount = 1;
@@ -390,6 +395,7 @@ const hueRanges = [
   { min: 30, max: 75 },
   { min: 30, max: 75 },
   { min: 30, max: 75 },
+  { min: 30, max: 75 },
 
 ];
 
@@ -464,6 +470,9 @@ let logColor = (() => {
          if(link.id == "spL13"){
           link.style.color = spanCol[13];
         }
+         if(link.id == "spL14"){
+          link.style.color = spanCol[14];
+        }
       }
     });
 
@@ -496,6 +505,7 @@ function handleMutations(mutationsList, observer) {
         spL11: 'https://isaacglyp.github.io/cargopublic/img/img12.png',
         spL12: 'https://isaacglyp.github.io/cargopublic/img/img13.png',
         spL13: 'https://isaacglyp.github.io/cargopublic/img/img14.png',
+        spL14: 'https://isaacglyp.github.io/cargopublic/img/img15.png',
     };
 
     mutationsList.forEach(function(mutation) {
@@ -568,6 +578,9 @@ function handleMutations(mutationsList, observer) {
                         }
                      if(this.id == "spL13"){
                           fadeColor(this, spanCol[13]);
+                        }
+                     if(this.id == "spL14"){
+                          fadeColor(this, spanCol[14]);
                         }
 
                         // Verwijder afbeelding als die bestaat
@@ -693,24 +706,3 @@ document.addEventListener('click', () => {
 // ==============================================================================
 // 🎨 IMAGE BRUSH CODE END
 // ==============================================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
